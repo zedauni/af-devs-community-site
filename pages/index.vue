@@ -1,3 +1,13 @@
 <template>
-    <h1 class=" text-3xl font-bold mt-8 text-center">This is the community site</h1>
+  <div>
+    <HomepageHero class="pt-16" />
+    <HomepageSeparationLine />
+    <HomepageServices />
+    <HomepageSeparationLine />
+    <HomepageBlogPosts />
+    <HomepageSeparationLine />
+    <HomepageCommunity />
+    <HomepageSeparationLine />
+    <HomepageContact />
+  </div>
 </template>
