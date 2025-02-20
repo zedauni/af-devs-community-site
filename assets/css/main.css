@@ -64,6 +64,36 @@
   --transition-duration: 0.3s;
 }
 
+/* DARK/LIGHT MODE SUPPORT */
+/* dark mode based on browser preferences */
+/*
+This dark mode management method is not ideal in our case since we already manage the dark mode deternmination in the useDarkMode composable.
+TODO Remove this later
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: var(--color-primary-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-wb: var(--color-wb-dark);
+    --color-bw: var(--color-bw-dark);
+    --color-background: var(--color-background-dark);
+    --color-text: var(--color-text-dark);
+    --color-border: var(--color-border-dark);
+    --color-border: var(--color-border-dark);
+  }
+}
+*/
+/* dark mode based on .dark class name (eg. <html class="dark">) */
+/* This method is the best since we can manage the dark mode in the useDarkMode composable, store user preference in local storage, and switch between modes without directly relying on browser preferences. So user can choose to bypass the browser dark mode preference or restore it when they want */
+.dark {
+  --color-primary: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary-dark);
+  --color-wb: var(--color-wb-dark);
+  --color-bw: var(--color-bw-dark);
+  --color-background: var(--color-background-dark);
+  --color-text: var(--color-text-dark);
+  --color-border: var(--color-border-dark);
+  --color-border: var(--color-border-dark);
+}
 
 @layer base {
   h1,
