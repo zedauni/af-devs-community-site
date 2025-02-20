@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /**
+  * Fonts come from @aldrichclement figma design
+  * TODO Make better integration with @A_liou template  
+  **/
+  --default-font-family: "Poppins", serif;
+  --font-display: "Poppins", serif;
+  --font-poppins: "Poppins", serif;
+  --font-manrope: "Manrope", serif;
+  --font-nunito: "Nunito", serif;
+
+  --transition-duration: 0.3s;
+}
+
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-manrope);
+  }
+}
+
