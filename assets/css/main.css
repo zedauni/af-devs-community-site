@@ -13,6 +13,54 @@
   --font-manrope: "Manrope", serif;
   --font-nunito: "Nunito", serif;
 
+  /**
+  * Colors come from @A_liou template with some modifications for dark mode support
+  * TODO Make integration with @aldrichclement figma colors  
+  **/
+  --color-light-gray: #e1e1e1;
+  --color-pale-gray: #f5f5f5;
+  --color-brigh-cyan: #56cfe1;
+  --color-brigh-cyan-rgb: 86, 207, 225; /* #56cfe1 in RGB */
+  --color-blue-berry: #4142a1;
+  --color-blue-berry-rgb: 65, 66, 161; /* #4142a1 in RGB */
+  --color-dark-blue-grey: #061C34; /* #4142a1 in RGB */
+  --color-dark-blue-grey-rgb: 6, 28, 52; /* #061C34 in RGB */
+  --color-ora: #ff6a33;
+
+  --color-success: #22d3ee;
+  --color-error: #f87171;
+  --color-warning: #a95704;
+
+  --color-primary: #4a6ef5;
+  --color-primary-rgb: 74, 110, 245; /* #4a6ef5 in RGB */
+  --color-primary-dark: #3d5bd9;
+  --color-primary-dark-rgb: 61, 91, 217; /*3d5bd9 # in RGB */
+
+  --color-wb: #fff;
+  --color-wb-dark: #000;
+
+  --color-bw: #000;
+  --color-bw-dark: #fff;
+
+  --color-secondary: var(--color-blue-berry);
+  --color-secondary-rgb: var(--color-blue-berry-rgb);
+  --color-secondary-dark: #45a3b3;
+  --color-secondary-dark-rgb: 69, 163, 179; /*45a3b3 # in RGB */
+
+  --color-background-light: #fafafa;
+  --color-background-dark: #111827;
+  --color-background: var(--color-background-light);
+
+  --color-card-background: rgba(20, 24, 38, 0.25);
+  --color-card-background-dark: rgba(20, 24, 38, 0.75);
+
+  --color-text-light: #1f2937;
+  --color-text-dark: #e3e8f7;
+  --color-text: var(--color-text-light);
+
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-dark: rgba(255, 255, 255, 0.1);
+
   --transition-duration: 0.3s;
 }
 
@@ -26,3 +74,259 @@
   }
 }
 
+@layer utilities {
+  .text-gradient-p-to-s {
+    @apply text-transparent;
+    /* background: linear-gradient(45deg, var(--color-primary), var(--color-secondary)); */
+    background: linear-gradient(
+      45deg,
+      var(--color-primary),
+      var(--color-brigh-cyan)
+    );
+    background-clip: text;
+  }
+
+  /**
+  * Try to reproduce @A_liou custom underline effect for some headers
+  * TODO Make it more smooth
+  **/
+  .underline-effect {
+    display: inline-block;
+    position: relative;
+  }
+  .underline-effect::after {
+    content: "";
+    @apply absolute bottom-[-10px] left-0 w-full h-[3px];
+    background: linear-gradient(
+      90deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
+  }
+
+  /**
+  * Try to reproduce @A_liou custom underline (hover) effect for some headers
+  * TODO Make it more smooth
+  **/
+  .underline-hover-effect {
+    display: inline-block;
+    position: relative;
+  }
+  .underline-hover-effect::after {
+    content: "";
+    @apply absolute bottom-[-10px] left-0 w-full h-[3px];
+    background: linear-gradient(
+      90deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-duration) ease-in-out;
+  }
+  /* Hover effect to reveal the underline */
+  .underline-hover-effect:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /**
+  * Try to reproduce @A_liou bouton effect
+  **/
+  .btn-with-gradient {
+    @apply relative inline-block overflow-hidden bg-transparent 
+           border-2 border-[var(--color-border)] rounded-4xl 
+           transition-transform ease-in-out duration-[var(--transition-duration)];
+  }
+  .btn-with-gradient:hover {
+    @apply text-white border-transparent;
+    box-shadow: 0 4px 15px rgba(var(--color-primary), 0.3);
+  }
+  /* Before element (gradient) starts from left */
+  .btn-with-gradient::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full 
+         bg-[linear-gradient(45deg,var(--color-primary),var(--color-secondary))] 
+         -z-1;
+  }
+
+  /**
+  * Try to reproduce @A_liou bouton (hover) effect
+  * TODO Make it more smooth
+  **/
+  .btn-hover-gradient {
+    @apply relative inline-block overflow-hidden bg-transparent
+           border-2 border-[var(--color-border)] rounded-4xl 
+           transition-transform ease-in-out duration-[var(--transition-duration)];
+  }
+  .btn-hover-gradient:hover {
+    @apply text-white border-transparent;
+    box-shadow: 0 4px 15px rgba(var(--color-primary), 0.3);
+  }
+  /* Before element (gradient) starts from left */
+  .btn-hover-gradient::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full 
+         bg-[linear-gradient(45deg,var(--color-primary),var(--color-secondary))] 
+         -z-1 scale-x-0 origin-left 
+         transition-transform duration-[var(--transition-duration)];
+  }
+  /* On hover, the gradient expands from left to right */
+  .btn-hover-gradient:hover::before {
+    @apply scale-x-100 origin-left;
+  }
+  /* When the hover effect is removed, retract from the right */
+  .btn-hover-gradient:not(:hover)::before {
+    @apply origin-right;
+  }
+
+  /**
+  * Try to reproduce @A_liou animated home image effect
+  **/
+  /* .home-img container styles */
+  .home-img {
+    @apply flex-[1.2_1_50%] flex justify-center items-center relative translate-x-[10px];
+    animation: float-image 6s ease-in-out infinite alternate;
+  }
+  /* Styles for images within .home-img */
+  .home-img img {
+    @apply max-w-full w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(91,66,243,0.25)] rounded-[calc(var(--border-radius-base)_+_3px)] hover:scale-105 transition-transform duration-1000 ease-in-out;
+  }
+  .animate-float-img {
+    animation: float-image 6s ease-in-out infinite alternate;
+  }
+  @keyframes float-image {
+    0% {
+      transform: translateY(0) translateX(0px);
+    }
+    100% {
+      transform: translateY(-15px) translateX(-10px);
+    }
+  }
+
+  /**
+  * Try to reproduce @A_liou ripple effect on button
+  **/
+  /* Button base styles */
+  .btn-ripple {
+    @apply relative w-fit mx-auto py-4 px-10 rounded-[30px] text-white font-semibold shadow-lg transition-transform duration-300;
+    background: linear-gradient(
+      45deg,
+      rgba(var(--color-primary-rgb), 0.4),
+      var(--color-primary),
+      rgba(var(--color-primary-rgb), 0.4),
+      var(--color-primary)
+    );
+    background-size: 200% 200%;
+    animation: gradient-animation 6s ease infinite;
+  }
+  /* Ripple effect on button click */
+  /* .btn-ripple::after {
+    content: "";
+    @apply absolute top-1/2 left-1/2 w-0 h-0 bg-white opacity-30 rounded-full transition-all duration-400 ease-out;
+    transform: translate(-50%, -50%) scale(0);
+  } */
+  /* .btn-ripple:active::after {
+    width: 200%;
+    padding-bottom: 200%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: none;
+  } */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /**
+  * Try to reproduce @A_liou styled hr
+  **/
+  .hr-styled {
+    @apply relative w-[80%] max-w-[600px] border-0 rounded-md my-12 mx-auto;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-primary) 30%,
+      var(--color-secondary) 70%,
+      transparent
+    );
+    box-shadow: 0 0 20px rgba(var(--color-primary-rgb), 0.3);
+  }
+  .hr-styled::before {
+    @apply content-[''] absolute top-1/2 left-1/2 w-6 h-6 
+           bg-[var(--color-primary)] rounded-full 
+           z-2;
+    transform: translate(-50%, -50%);
+    animation: beat 5s infinite ease-in-out;
+    box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.3),
+      0 0 0 8px rgba(var(--color-primary-rgb), 0.2),
+      0 0 20px rgba(var(--color-primary-rgb), 0.5);
+  }
+  .hr-styled::after {
+    @apply content-[''] absolute top-1/2 left-1/2
+           bg-[rgba(var(--color-secondary-rgb),0.2)] rounded-full;
+    width: 75%;
+    height: 10rem;
+    transform: translate(-50%, -50%);
+    animation: pulse-outer 3s infinite ease-in-out, rotate 6s infinite linear;
+  }
+  /**w-
+  * I encountered conflict with the name "pulse". So i named it "beat"
+  **/
+  @keyframes beat {
+    0%,
+    100% {
+      transform: translate(-50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%) scale(15);
+    }
+  }
+  @keyframes beat-outer {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
+    }
+  }
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+}
+
+/**
+* DEFINE SOME CSS CLASS
+* TODO Move it to relevant layer
+**/
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-background {
+  background-color: var(--color-background);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-text {
+  color: var(--color-text);
+}
