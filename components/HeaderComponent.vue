@@ -18,27 +18,37 @@
       <ul
         id="menu-side-navbar"
         class="md:flex space-x-6"
-        :class="{hidden: !sideNavIsVisible}"
+        :class="{ hidden: !sideNavIsVisible }"
         v-on-click-outside="handleSideMenuClick"
       >
         <li class="_bg-gray-50/5 py-3">
-          <a href="#" class="transition-colors underline-effect px-5">Accueil</a>
+          <a href="#" class="transition-colors underline-effect px-5"
+            >Accueil</a
+          >
         </li>
         <li class="py-3">
-          <a href="#activities" class="transition-colors underline-hover-effect px-5"
+          <a
+            href="#activities"
+            class="transition-colors underline-hover-effect px-5"
             >Nos Activités</a
           >
         </li>
         <li class="py-3">
-          <a href="#blog" class="transition-colors underline-hover-effect px-5">Blog</a>
+          <a href="#blog" class="transition-colors underline-hover-effect px-5"
+            >Blog</a
+          >
         </li>
         <li class="py-3">
-          <a href="#community" class="transition-colors underline-hover-effect px-5"
+          <a
+            href="#community"
+            class="transition-colors underline-hover-effect px-5"
             >Rejoindre</a
           >
         </li>
         <li class="py-3">
-          <a href="#contact" class="transition-colors underline-hover-effect px-5"
+          <a
+            href="#contact"
+            class="transition-colors underline-hover-effect px-5"
             >Contact</a
           >
         </li>
@@ -62,10 +72,9 @@ import { vOnClickOutside } from "@vueuse/components";
 
 const sideNavIsVisible = shallowRef(false);
 
-const { handleClick: handleSideMenuClick } = useThrottledHandler(
-  () => {sideNavIsVisible.value = !sideNavIsVisible.value},
-  50
-);
+const { handleClick: handleSideMenuClick } = useThrottledHandler(() => {
+  sideNavIsVisible.value = !sideNavIsVisible.value;
+}, 50);
 
 // SORRY
 // I am lazy. So i am not going to manage the dark mode in this Header component.
