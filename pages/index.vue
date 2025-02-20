@@ -5,5 +5,7 @@
     <HomepageServices />
     <HomepageSeparationLine />
     <HomepageBlogPosts />
+    <HomepageSeparationLine />
+    <HomepageCommunity />
   </div>
 </template>
