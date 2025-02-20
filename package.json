@@ -28,5 +28,6 @@
       "@prisma/engines",
       "prisma"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.4.1"
 }
