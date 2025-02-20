@@ -135,7 +135,7 @@
         class="mt-16 py-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
       >
         <p class="text-gray-700 dark:text-gray-400">
-    
+          &copy; {{ currentYear }} AF-DEVS. Tous droits réservés.
         </p>
         <div
           class="flex flex-col md:flex-row justify-between items-center mt-4 md:mt-0"
@@ -158,3 +158,7 @@
     </div>
   </footer>
 </template>
+
+<script lang="ts" setup>
+const currentYear = computed((): number => new Date().getFullYear());
+</script>
