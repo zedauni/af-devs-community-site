@@ -1,24 +1,22 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   vite: {
-    plugins: [
-      tailwindcss(),
-    ],
+    plugins: [tailwindcss()],
   },
   app: {
     head: {
       link: [
         {
-          rel: 'preconnect',
+          rel: "preconnect",
           href: 'https://fonts.googleapis.com"',
         },
         {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossorigin: 'anonymous',
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossorigin: "anonymous",
         },
         {
           rel: "stylesheet",
@@ -26,36 +24,42 @@ export default defineNuxtConfig({
         },
       ],
     },
+    // Use the environment variable to set the baseURL
+    baseURL: process.env.NUXT_APP_BASE_URL || "/",
   },
-  css: [
-    "~/assets/css/main.css"
-  ],
-  modules: ['@nuxtjs/color-mode', '@nuxt/icon', '@vueuse/nuxt'],
+  runtimeConfig: {
+    public: {
+      // Expose the baseURL to the runtime for client-side usage
+      baseURL: process.env.NUXT_APP_BASE_URL || "/",
+    },
+  },
+  css: ["~/assets/css/main.css"],
+  modules: ["@nuxtjs/color-mode", "@nuxt/icon", "@vueuse/nuxt"],
   colorMode: {
-    preference: 'system', // default value of $colorMode.preference
-    fallback: 'light', // fallback value if not system preference found
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '',
-    dataValue: 'theme',
-    storage: 'cookie', // 'localStorage' or 'sessionStorage' or 'cookie'
-    storageKey: 'app-color-mode'
+    preference: "system", // default value of $colorMode.preference
+    fallback: "light", // fallback value if not system preference found
+    hid: "nuxt-color-mode-script",
+    globalName: "__NUXT_COLOR_MODE__",
+    componentName: "ColorScheme",
+    classPrefix: "",
+    classSuffix: "",
+    dataValue: "theme",
+    storage: "cookie", // 'localStorage' or 'sessionStorage' or 'cookie'
+    storageKey: "app-color-mode",
   },
   icon: {
     clientBundle: {
       // list of icons to explicitly include in the client bundle
-      icons: [
-        'ri:moon-clear-line',
-        'ri:sun-fill',
-        'ri:computer-line',
-      ],
+      icons: ["ri:moon-clear-line", "ri:sun-fill", "ri:computer-line"],
       // scan this folders for icons to include in the client bundle
       scan: {
-        globInclude: ['components/**/*.vue', 'layout/**/*.vue', 'pages/**/*.vue'],
-        globExclude: ['node_modules', 'dist'],
+        globInclude: [
+          "components/**/*.vue",
+          "layout/**/*.vue",
+          "pages/**/*.vue",
+        ],
+        globExclude: ["node_modules", "dist"],
       },
     },
   },
-})
+});
