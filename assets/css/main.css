@@ -1,1 +1,126 @@
 @import "tailwindcss";
+
+@theme {
+  --default-font-family: "Poppins", serif;
+  --font-display: "Poppins", serif;
+  --font-poppins: "Poppins", serif;
+  --font-manrope: "Manrope", serif;
+  --font-nunito: "Nunito", serif;
+
+  --color-ora: #ff6a33;
+}
+
+/* Main Gradient Backgrounds */
+.bg-gradient-one {
+  background: linear-gradient(
+    to bottom right,
+    rgba(2, 216, 245, 0.175) 0%,
+    rgba(2, 216, 245, 1) 100%
+  );
+
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(2, 216, 245, 0.085) 0%,
+    rgba(2, 216, 245, 0) 100%
+  );
+}
+/* Decorated Backgrounds */
+.bg-decoration-ltr {
+  position: relative;
+}
+.bg-decoration-ltr:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -50;
+  background: linear-gradient(
+    to right,
+    rgba(2, 216, 245, 0) 0%,
+    rgba(2, 216, 245, 0.175) 100%
+  );
+}
+
+.bg-decoration-1x {
+  position: relative;
+}
+.bg-decoration-1x:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -70%;
+  top: -30%;
+  z-index: -50;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(2, 216, 245, 0.175) 0%,
+    rgba(2, 216, 245, 0) 100%
+  );
+}
+
+.bg-decoration-2x {
+  position: relative;
+}
+.bg-decoration-2x:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -50%;
+  top: -10%;
+  z-index: -50;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(2, 216, 245, 0.175) 0%,
+    rgba(2, 216, 245, 0) 100%
+  );
+}
+.bg-decoration-2x:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -50;
+  background: radial-gradient(
+    80% 80% at 80% 80%,
+    rgba(2, 216, 245, 0.175) 0%,
+    rgba(2, 216, 245, 0) 100%
+  );
+}
+
+.bg-decoration-rtl {
+  position: relative;
+}
+.bg-decoration-rtl:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -50%;
+  top: 0;
+  z-index: -50;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(2, 216, 245, 0.175) 0%,
+    rgba(2, 216, 245, 0) 100%
+  );
+}
+.bg-decoration-rtl:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: -50%;
+  top: 70%;
+  z-index: -50;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(2, 216, 245, 0.175) 0%,
+    rgba(2, 216, 245, 0) 100%
+  );
+}
