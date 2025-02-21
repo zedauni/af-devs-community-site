@@ -1,3 +1,17 @@
 <template>
-    <h1 class=" text-3xl font-bold mt-8 text-center">This is the community site</h1>
+  <div class="w-full min-h-screen">
+    <div class="flex flex-col rounded-none">
+      <HomePageHeroSection />
+      <HomePageFirstSection />
+      <HomePageSecondSection />
+      <HomePageThirdSection />
+      <HomePageFourthSection />
+    </div>
+  </div>
 </template>
+
+<style>
+body {
+  background-color: #0e0e0e;
+}
+</style>
