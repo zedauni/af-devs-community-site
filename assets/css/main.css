@@ -23,7 +23,7 @@
   --color-brigh-cyan-rgb: 86, 207, 225; /* #56cfe1 in RGB */
   --color-blue-berry: #4142a1;
   --color-blue-berry-rgb: 65, 66, 161; /* #4142a1 in RGB */
-  --color-dark-blue-grey: #061C34; /* #4142a1 in RGB */
+  --color-dark-blue-grey: #061c34; /* #4142a1 in RGB */
   --color-dark-blue-grey-rgb: 6, 28, 52; /* #061C34 in RGB */
   --color-ora: #ff6a33;
 
@@ -105,6 +105,128 @@ TODO Remove this later
 }
 
 @layer utilities {
+  /**
+  * I have overridden the `space-y-*` and `space-x-*` utilities because I am experiencing issues with these classes in production (but not in development).
+  * TODO Fix issues and remove all space-y-* and space-x-* class 
+  **/
+  .space-y-2 > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(
+      calc(var(--spacing) * 2) * var(--tw-space-y-reverse)
+    );
+    margin-block-end: calc(
+      calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse))
+    );
+  }
+  .space-y-4 > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(
+      calc(var(--spacing) * 4) * var(--tw-space-y-reverse)
+    );
+    margin-block-end: calc(
+      calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse))
+    );
+  }
+  .space-y-6 > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(
+      calc(var(--spacing) * 6) * var(--tw-space-y-reverse)
+    );
+    margin-block-end: calc(
+      calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse))
+    );
+  }
+  .space-y-8 > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(
+      calc(var(--spacing) * 8) * var(--tw-space-y-reverse)
+    );
+    margin-block-end: calc(
+      calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse))
+    );
+  }
+  .space-y-10 > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(
+      calc(var(--spacing) * 10) * var(--tw-space-y-reverse)
+    );
+    margin-block-end: calc(
+      calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse))
+    );
+  }
+  .space-y-14 > :not(:last-child) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(
+      calc(var(--spacing) * 14) * var(--tw-space-y-reverse)
+    );
+    margin-block-end: calc(
+      calc(var(--spacing) * 14) * calc(1 - var(--tw-space-y-reverse))
+    );
+  }
+  .space-x-2 > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(
+      calc(var(--spacing) * 2) * var(--tw-space-x-reverse)
+    );
+    margin-inline-end: calc(
+      calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse))
+    );
+  }
+  .space-x-4 > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(
+      calc(var(--spacing) * 4) * var(--tw-space-x-reverse)
+    );
+    margin-inline-end: calc(
+      calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse))
+    );
+  }
+  .space-x-6 > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(
+      calc(var(--spacing) * 6) * var(--tw-space-x-reverse)
+    );
+    margin-inline-end: calc(
+      calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse))
+    );
+  }
+  .space-x-8 > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(
+      calc(var(--spacing) * 8) * var(--tw-space-x-reverse)
+    );
+    margin-inline-end: calc(
+      calc(var(--spacing) * 8) * calc(1 - var(--tw-space-x-reverse))
+    );
+  }
+  .space-x-10 > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(
+      calc(var(--spacing) * 10) * var(--tw-space-x-reverse)
+    );
+    margin-inline-end: calc(
+      calc(var(--spacing) * 10) * calc(1 - var(--tw-space-x-reverse))
+    );
+  }
+  .space-x-12 > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(
+      calc(var(--spacing) * 12) * var(--tw-space-x-reverse)
+    );
+    margin-inline-end: calc(
+      calc(var(--spacing) * 12) * calc(1 - var(--tw-space-x-reverse))
+    );
+  }
+  .space-x-14 > :not(:last-child) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(
+      calc(var(--spacing) * 14) * var(--tw-space-x-reverse)
+    );
+    margin-inline-end: calc(
+      calc(var(--spacing) * 14) * calc(1 - var(--tw-space-x-reverse))
+    );
+  }
+
   .text-gradient-p-to-s {
     @apply text-transparent;
     /* background: linear-gradient(45deg, var(--color-primary), var(--color-secondary)); */
