@@ -50,11 +50,7 @@
           class="bg-pale-gray dark:bg-transparent rounded-lg shadow-md border border-gray-100 dark:border-gray-50/10 hover:border-gray-200 dark:hover:border-gray-50/75 overflow-hidden transition-transform hover:-translate-y-2 duration-500"
         >
           <a href="#">
-            <img
-              :src="post.image"
-              :alt="post.title"
-              class="w-full h-48 object-cover"
-            />
+            <PublicImage :src="post.image" :alt="post.title" class="w-full h-48 object-cover" />
             <div class="p-6">
               <span
                 class="inline-block bg-primary text-white text-sm font-semibold my-1 px-2 py-1 rounded" :style="{ backgroundColor: post.tag.color }"
@@ -84,19 +80,19 @@ const posts = [
     title: "Les meilleures pratiques pour le développement web moderne",
     description:
       "Découvrez comment créer des sites web performants et accessibles.",
-    image: "/images/posts/blog1.jpeg",
+    image: "images/posts/blog1.jpeg",
     tag: {label: "WEB", color: "darkblue"},
   },
   {
     title: "Rencontre avec Fatou, développeuse sénégalaise spécialisée en IA",
     description: "Découvrez le parcours inspirant de Fatou.",
-    image: "/images/posts/blog2.webp",
+    image: "images/posts/blog2.webp",
     tag: {label: "INTERVIEW", color: "purple"},
   },
   {
     title: "L'Afrique, futur hub de l'innovation technologique ?",
     description: "Analyse des tendances tech en Afrique.",
-    image: "/images/posts/blog3.jpg",
+    image: "images/posts/blog3.jpg",
     tag: {label: "NEWS", color: "darkred"},
   },
 ];
