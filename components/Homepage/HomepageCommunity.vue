@@ -15,7 +15,7 @@
       <div class="md:w-1/2">
         <div class="">
           <h2
-            class="text-3xl md:text-4xl font-bold mb-8 text-gradient-p-to-s underline-hover-effect"
+            class="text-3xl md:text-4xl font-bold mb-8 -text-gradient-p-to-s text-secondary underline-hover-effect"
           >
             Rejoindre la Communauté
           </h2>
@@ -29,7 +29,7 @@
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="text-custom-blue mr-2"
             />
             Accès à des ressources exclusives et tutoriels
           </li>
@@ -37,7 +37,7 @@
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="text-custom-blue mr-2"
             />
             Réseautage avec des développeurs talentueux à travers l'Afrique
           </li>
@@ -45,7 +45,7 @@
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="text-custom-blue mr-2"
             />
             Participation à des projets open-source innovants
           </li>
@@ -53,7 +53,7 @@
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="text-custom-blue mr-2"
             />
             Invitations à des événements et hackathons
           </li>
@@ -61,7 +61,7 @@
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="text-custom-blue mr-2"
             />
             Opportunités de collaboration et de mentorat
           </li>

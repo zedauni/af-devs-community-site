@@ -1,106 +1,202 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /**
-  * Fonts come from @aldrichclement figma design
-  * TODO Make better integration with @A_liou template  
-  **/
   --default-font-family: "Poppins", serif;
-  --font-display: "Poppins", serif;
   --font-poppins: "Poppins", serif;
   --font-manrope: "Manrope", serif;
   --font-nunito: "Nunito", serif;
+  --font-serif: "Poppins", serif;
 
   /**
-  * Colors come from @A_liou template with some modifications for dark mode support
-  * TODO Make integration with @aldrichclement figma colors  
+  * TODO Remove this custom color in favor of tailwind colors
   **/
-  --color-light-gray: #e1e1e1;
-  --color-pale-gray: #f5f5f5;
-  --color-brigh-cyan: #56cfe1;
-  --color-brigh-cyan-rgb: 86, 207, 225; /* #56cfe1 in RGB */
-  --color-blue-berry: #4142a1;
-  --color-blue-berry-rgb: 65, 66, 161; /* #4142a1 in RGB */
-  --color-dark-blue-grey: #061c34; /* #4142a1 in RGB */
-  --color-dark-blue-grey-rgb: 6, 28, 52; /* #061C34 in RGB */
-  --color-ora: #ff6a33;
+  --color-pale-gray: oklch(97.02% 0 none);
+  --color-ora: oklch(70.31% 0.1939 39.29);
+  --color-brigh-cyan: oklch(79.34% 0.1095 208.7);
 
-  --color-success: #22d3ee;
-  --color-error: #f87171;
-  --color-warning: #a95704;
+  --color-blue-berry: oklch(43.5% 0.1501 277.7);
+  --color-warm-blue: oklch(52.49% 0.1956 268.5);
+  --color-teal-blue: oklch(66.59% 0.0906 210.5);
+  --color-custom-blue-light: var(--color-teal-blue);
+  --color-custom-blue-dark: var(--color-warm-blue);
+  --color-custom-blue: var(--color-custom-blue-dark);
+  --color-custom-blue-invert: var(--color-custom-blue-light);
 
-  --color-primary: #4a6ef5;
-  --color-primary-rgb: 74, 110, 245; /* #4a6ef5 in RGB */
-  --color-primary-dark: #3d5bd9;
-  --color-primary-dark-rgb: 61, 91, 217; /*3d5bd9 # in RGB */
+  --color-success-light: oklch(79.71% 0.1339 211.5);
+  --color-success-dark: oklch(79.71% 0.1339 211.5);
+  --color-success: var(--color-success-light);
+  --color-error-light: oklch(71.06% 0.1661 22.22);
+  --color-error-dark: oklch(71.06% 0.1661 22.22);
+  --color-error: var(--color-error-light);
+  --color-warning-light: oklch(54.52% 0.133 55.32);
+  --color-warning-dark: oklch(54.52% 0.133 55.32);
+  --color-warning: var(--color-warning-light);
 
-  --color-wb: #fff;
-  --color-wb-dark: #000;
+  --color-wb-light: oklch(100% 0 none);
+  --color-wb-dark: oklch(0% 0 none);
+  --color-wb: var(--color-wb-light);
 
-  --color-bw: #000;
-  --color-bw-dark: #fff;
+  --color-bw-light: oklch(0% 0 none);
+  --color-bw-dark: oklch(100% 0 none);
+  --color-bw: var(--color-bw-light);
 
-  --color-secondary: var(--color-blue-berry);
-  --color-secondary-rgb: var(--color-blue-berry-rgb);
-  --color-secondary-dark: #45a3b3;
-  --color-secondary-dark-rgb: 69, 163, 179; /*45a3b3 # in RGB */
+  --color-main-bg-light: oklch(98.51% 0 none);
+  --color-main-bg-dark: oklch(21.01% 0.0318 264.7);
+  --color-main-bg: var(--color-main-bg-light);
 
-  --color-background-light: #fafafa;
-  --color-background-dark: #111827;
-  --color-background: var(--color-background-light);
+  --color-light: oklch(27.81% 0.0296 256.8);
+  --color-dark: oklch(93.16% 0.021 271.2);
+  --color-text: var(--color-light);
 
-  --color-card-background: rgba(20, 24, 38, 0.25);
-  --color-card-background-dark: rgba(20, 24, 38, 0.75);
+  --color-border-light: oklch(0% 0 none / 0.1);
+  --color-border-dark: oklch(100% 0 none / 0.1);
+  --color-border: var(--color-border-light);
 
-  --color-text-light: #1f2937;
-  --color-text-dark: #e3e8f7;
-  --color-text: var(--color-text-light);
+  /** from yinmn-blue **/
+  --color-primary-900: oklch(17.95% 0.0173 252.6);
+  --color-primary-800: oklch(25.74% 0.0325 256.3);
+  --color-primary-700: oklch(32.86% 0.0452 255.2);
+  --color-primary-600: oklch(39.67% 0.0586 255.4);
+  --color-primary-500: oklch(46.2% 0.0713 255.5);
+  --color-primary-400: oklch(56.87% 0.0895 255.1);
+  --color-primary-300: oklch(67.82% 0.0653 255.3);
+  --color-primary-200: oklch(78.82% 0.0419 254.1);
+  --color-primary-100: oklch(89.46% 0.0203 257.5);
+  --color-primary-50: oklch(93.56% 0.0145 244.7);
+  --color-primary: var(--color-primary-600);
 
-  --color-border: rgba(0, 0, 0, 0.1);
-  --color-border-dark: rgba(255, 255, 255, 0.1);
+  /** from powder-blue **/
+  --color-primary-dark-900: oklch(26.98% 0.0363 237.4);
+  --color-primary-dark-800: oklch(41.98% 0.0628 237);
+  --color-primary-dark-700: oklch(55.97% 0.0877 236.2);
+  --color-primary-dark-600: oklch(67.77% 0.085 235.7);
+  --color-primary-dark-500: oklch(78.95% 0.0554 234.1);
+  --color-primary-dark-400: oklch(83.04% 0.0442 233.3);
+  --color-primary-dark-300: oklch(87.15% 0.0339 234.1);
+  --color-primary-dark-200: oklch(91.52% 0.0227 233.4);
+  --color-primary-dark-100: oklch(95.66% 0.0109 234.8);
+  --color-primary-dark-50: oklch(93.92% 0.0159 233);
+  --color-primary-dark: var(--color-primary-dark-600);
+
+  /** from burnt-sienna **/
+  --color-secondary-900: oklch(24.16% 0.0697 36.33);
+  --color-secondary-800: oklch(37.63% 0.1212 34.6);
+  --color-secondary-700: oklch(50.03% 0.1675 34.37);
+  --color-secondary-600: oklch(61.46% 0.2102 33.92);
+  --color-secondary-500: oklch(68.35% 0.1676 34.7);
+  --color-secondary-400: oklch(74.15% 0.1315 35.08);
+  --color-secondary-300: oklch(80.14% 0.0956 34.44);
+  --color-secondary-200: oklch(86.5% 0.0614 34.69);
+  --color-secondary-100: oklch(93.23% 0.0299 33.1);
+  --color-secondary-50: oklch(92.8% 0.0321 32.06);
+  --color-secondary: var(--color-secondary-600);
+
+  /** from burnt-sienna **/
+  --color-secondary-dark-900: var(--color-secondary-900);
+  --color-secondary-dark-800: var(--color-secondary-800);
+  --color-secondary-dark-700: var(--color-secondary-700);
+  --color-secondary-dark-600: var(--color-secondary-600);
+  --color-secondary-dark-500: var(--color-secondary-500);
+  --color-secondary-dark-400: var(--color-secondary-400);
+  --color-secondary-dark-300: var(--color-secondary-300);
+  --color-secondary-dark-200: var(--color-secondary-200);
+  --color-secondary-dark-100: var(--color-secondary-100);
+  --color-secondary-dark-50: var(--color-secondary-50);
+  --color-secondary-dark: var(--color-secondary-500);
+
+  /** from light-cyan **/
+  --color-background-900: oklch(40.6% 0.0661 197.8);
+  --color-background-800: oklch(66.28% 0.1104 199.5);
+  --color-background-700: oklch(84.07% 0.1348 198.5);
+  --color-background-600: oklch(89.35% 0.0972 198);
+  --color-background-500: oklch(96.89% 0.0281 199.4);
+  --color-background-400: oklch(97.44% 0.024 196.8);
+  --color-background-300: oklch(97.96% 0.0169 201.4);
+  --color-background-200: oklch(98.62% 0.0117 203.5);
+  --color-background-100: oklch(99.33% 0.0053 197.1);
+  --color-background-50: oklch(99.33% 0.0053 197.1);
+  --color-background: var(--color-background-600);
+
+  /** from gunmetal **/
+  --color-background-dark-900: oklch(14.38% 0.0075 256.9);
+  --color-background-dark-800: oklch(18.99% 0.0138 258.4);
+  --color-background-dark-700: oklch(23.46% 0.0208 264.1);
+  --color-background-dark-600: oklch(27.6% 0.0262 262.6);
+  --color-background-dark-500: oklch(31.54% 0.0297 260.5);
+  --color-background-dark-400: oklch(45.8% 0.0486 260.7);
+  --color-background-dark-300: oklch(59.32% 0.0592 260.5);
+  --color-background-dark-200: oklch(73.26% 0.0378 262.8);
+  --color-background-dark-100: oklch(86.82% 0.0182 261.3);
+  --color-background-dark-50: oklch(93.35% 0.0087 264.5);
+  --color-background-dark: var(--color-background-dark-600);
 
   --transition-duration: 0.3s;
 }
 
-/* DARK/LIGHT MODE SUPPORT */
-/* dark mode based on browser preferences */
-/*
-This dark mode management method is not ideal in our case since we already manage the dark mode deternmination in the useDarkMode composable.
-TODO Remove this later
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-primary: var(--color-primary-dark);
-    --color-secondary: var(--color-secondary-dark);
+@layer base {
+  /* dark mode based on .dark class name (eg. <html class="dark">) */
+  /* This method is the best since we can manage the dark mode in the useThemeMode composable, store user preference in cookie, and switch between modes without directly relying on browser preferences. So user can choose to bypass the browser dark mode preference or restore it when they want */
+  .dark {
     --color-wb: var(--color-wb-dark);
     --color-bw: var(--color-bw-dark);
-    --color-background: var(--color-background-dark);
-    --color-text: var(--color-text-dark);
+    --color-text: var(--color-dark);
     --color-border: var(--color-border-dark);
     --color-border: var(--color-border-dark);
-  }
-}
-*/
-/* dark mode based on .dark class name (eg. <html class="dark">) */
-/* This method is the best since we can manage the dark mode in the useDarkMode composable, store user preference in local storage, and switch between modes without directly relying on browser preferences. So user can choose to bypass the browser dark mode preference or restore it when they want */
-.dark {
-  --color-primary: var(--color-primary-dark);
-  --color-secondary: var(--color-secondary-dark);
-  --color-wb: var(--color-wb-dark);
-  --color-bw: var(--color-bw-dark);
-  --color-background: var(--color-background-dark);
-  --color-text: var(--color-text-dark);
-  --color-border: var(--color-border-dark);
-  --color-border: var(--color-border-dark);
-}
+    --color-custom-blue: var(--color-custom-blue-light);
+    --color-custom-blue-invert: var(--color-custom-blue-dark);
+    --color-main-bg: var(--color-main-bg-dark);
 
-@layer base {
+    --color-primary-100: var(--color-primary-dark-100);
+    --color-primary-200: var(--color-primary-dark-200);
+    --color-primary-300: var(--color-primary-dark-300);
+    --color-primary-400: var(--color-primary-dark-400);
+    --color-primary-500: var(--color-primary-dark-500);
+    --color-primary-600: var(--color-primary-dark-600);
+    --color-primary-700: var(--color-primary-dark-700);
+    --color-primary-800: var(--color-primary-dark-800);
+    --color-primary-900: var(--color-primary-dark-900);
+    --color-primary: var(--color-primary-dark);
+
+    --color-secondary-100: var(--color-secondary-dark-100);
+    --color-secondary-200: var(--color-secondary-dark-200);
+    --color-secondary-300: var(--color-secondary-dark-300);
+    --color-secondary-400: var(--color-secondary-dark-400);
+    --color-secondary-500: var(--color-secondary-dark-500);
+    --color-secondary-600: var(--color-secondary-dark-600);
+    --color-secondary-700: var(--color-secondary-dark-700);
+    --color-secondary-800: var(--color-secondary-dark-800);
+    --color-secondary-900: var(--color-secondary-dark-900);
+    --color-secondary: var(--color-secondary-dark-500);
+
+    --color-background-100: var(--color-background-dark-100);
+    --color-background-200: var(--color-background-dark-200);
+    --color-background-300: var(--color-background-dark-300);
+    --color-background-400: var(--color-background-dark-400);
+    --color-background-500: var(--color-background-dark-500);
+    --color-background-600: var(--color-background-dark-600);
+    --color-background-700: var(--color-background-dark-700);
+    --color-background-800: var(--color-background-dark-800);
+    --color-background-900: var(--color-background-dark-900);
+    --color-background: var(--color-background-dark);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-manrope);
+  }
+  h1.colored,
+  h2.colored,
+  h3.colored,
+  h4.colored {
+    @apply text-secondary;
   }
 }
 
@@ -229,10 +325,9 @@ TODO Remove this later
 
   .text-gradient-p-to-s {
     @apply text-transparent;
-    /* background: linear-gradient(45deg, var(--color-primary), var(--color-secondary)); */
     background: linear-gradient(
       45deg,
-      var(--color-primary),
+      var(--color-custom-blue-dark),
       var(--color-brigh-cyan)
     );
     background-clip: text;
@@ -248,11 +343,11 @@ TODO Remove this later
   }
   .underline-effect::after {
     content: "";
-    @apply absolute bottom-[-10px] left-0 w-full h-[3px];
+    @apply absolute bottom-[-10px] left-0 h-[3px] w-full;
     background: linear-gradient(
       90deg,
-      var(--color-primary),
-      var(--color-secondary)
+      var(--color-custom-blue-dark),
+      var(--color-custom-blue-light)
     );
   }
 
@@ -266,11 +361,11 @@ TODO Remove this later
   }
   .underline-hover-effect::after {
     content: "";
-    @apply absolute bottom-[-10px] left-0 w-full h-[3px];
+    @apply absolute bottom-[-10px] left-0 h-[3px] w-full;
     background: linear-gradient(
       90deg,
-      var(--color-primary),
-      var(--color-secondary)
+      var(--color-custom-blue-dark),
+      var(--color-custom-blue-light)
     );
     transform: scaleX(0);
     transform-origin: right;
@@ -286,19 +381,15 @@ TODO Remove this later
   * Try to reproduce @A_liou bouton effect
   **/
   .btn-with-gradient {
-    @apply relative inline-block overflow-hidden bg-transparent 
-           border-2 border-[var(--color-border)] rounded-4xl 
-           transition-transform ease-in-out duration-[var(--transition-duration)];
+    @apply relative inline-block overflow-hidden rounded-4xl border-2 border-[var(--color-border)] bg-transparent transition-transform duration-[var(--transition-duration)] ease-in-out;
   }
   .btn-with-gradient:hover {
-    @apply text-white border-transparent;
-    box-shadow: 0 4px 15px rgba(var(--color-primary), 0.3);
+    @apply border-transparent text-white;
+    box-shadow: 0 4px 15px rgba(var(--color-custom-blue-dark), 0.3);
   }
   /* Before element (gradient) starts from left */
   .btn-with-gradient::before {
-    @apply content-[''] absolute top-0 left-0 w-full h-full 
-         bg-[linear-gradient(45deg,var(--color-primary),var(--color-secondary))] 
-         -z-1;
+    @apply absolute top-0 left-0 -z-1 h-full w-full bg-[linear-gradient(45deg,var(--color-custom-blue-dark),var(--color-custom-blue))] content-[''];
   }
 
   /**
@@ -306,24 +397,19 @@ TODO Remove this later
   * TODO Make it more smooth
   **/
   .btn-hover-gradient {
-    @apply relative inline-block overflow-hidden bg-transparent
-           border-2 border-[var(--color-border)] rounded-4xl 
-           transition-transform ease-in-out duration-[var(--transition-duration)];
+    @apply relative inline-block overflow-hidden rounded-4xl border-2 border-[var(--color-border)] bg-transparent transition-transform duration-[var(--transition-duration)] ease-in-out;
   }
   .btn-hover-gradient:hover {
-    @apply text-white border-transparent;
-    box-shadow: 0 4px 15px rgba(var(--color-primary), 0.3);
+    @apply border-transparent text-white;
+    box-shadow: 0 4px 15px rgba(var(--color-custom-blue-dark), 0.3);
   }
   /* Before element (gradient) starts from left */
   .btn-hover-gradient::before {
-    @apply content-[''] absolute top-0 left-0 w-full h-full 
-         bg-[linear-gradient(45deg,var(--color-primary),var(--color-secondary))] 
-         -z-1 scale-x-0 origin-left 
-         transition-transform duration-[var(--transition-duration)];
+    @apply absolute top-0 left-0 -z-1 h-full w-full origin-left scale-x-0 bg-[linear-gradient(45deg,var(--color-custom-blue-dark),var(--color-custom-blue))] transition-transform duration-[var(--transition-duration)] content-[''];
   }
   /* On hover, the gradient expands from left to right */
   .btn-hover-gradient:hover::before {
-    @apply scale-x-100 origin-left;
+    @apply origin-left scale-x-100;
   }
   /* When the hover effect is removed, retract from the right */
   .btn-hover-gradient:not(:hover)::before {
@@ -335,12 +421,12 @@ TODO Remove this later
   **/
   /* .home-img container styles */
   .home-img {
-    @apply flex-[1.2_1_50%] flex justify-center items-center relative translate-x-[10px];
+    @apply relative flex flex-[1.2_1_50%] translate-x-[10px] items-center justify-center;
     animation: float-image 6s ease-in-out infinite alternate;
   }
   /* Styles for images within .home-img */
   .home-img img {
-    @apply max-w-full w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(91,66,243,0.25)] rounded-[calc(var(--border-radius-base)_+_3px)] hover:scale-105 transition-transform duration-1000 ease-in-out;
+    @apply h-auto w-full max-w-full rounded-[calc(var(--border-radius-base)_+_3px)] object-contain drop-shadow-[0_0_30px_rgba(91,66,243,0.25)] transition-transform duration-1000 ease-in-out hover:scale-105;
   }
   .animate-float-img {
     animation: float-image 6s ease-in-out infinite alternate;
@@ -359,30 +445,16 @@ TODO Remove this later
   **/
   /* Button base styles */
   .btn-ripple {
-    @apply relative w-fit mx-auto py-4 px-10 rounded-[30px] text-white font-semibold shadow-lg transition-transform duration-300;
+    @apply relative mx-auto w-fit rounded-[30px] px-10 py-4 font-semibold text-white shadow-lg transition-transform duration-300;
     background: linear-gradient(
       45deg,
-      rgba(var(--color-primary-rgb), 0.4),
-      var(--color-primary),
-      rgba(var(--color-primary-rgb), 0.4),
-      var(--color-primary)
+      var(--color-custom-blue-light),
+      var(--color-custom-blue-dark),
+      var(--color-custom-blue-light)
     );
     background-size: 200% 200%;
     animation: gradient-animation 6s ease infinite;
   }
-  /* Ripple effect on button click */
-  /* .btn-ripple::after {
-    content: "";
-    @apply absolute top-1/2 left-1/2 w-0 h-0 bg-white opacity-30 rounded-full transition-all duration-400 ease-out;
-    transform: translate(-50%, -50%) scale(0);
-  } */
-  /* .btn-ripple:active::after {
-    width: 200%;
-    padding-bottom: 200%;
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
-    transition: none;
-  } */
   @keyframes gradient-animation {
     0% {
       background-position: 0% 50%;
@@ -399,35 +471,36 @@ TODO Remove this later
   * Try to reproduce @A_liou styled hr
   **/
   .hr-styled {
-    @apply relative w-[80%] max-w-[600px] border-0 rounded-md my-12 mx-auto;
+    @apply relative mx-auto my-12 w-[80%] max-w-[600px] rounded-md border-0;
     height: 2px;
     background: linear-gradient(
       90deg,
       transparent,
-      var(--color-primary) 30%,
-      var(--color-secondary) 70%,
+      var(--color-custom-blue-dark) 30%,
+      var(--color-custom-blue-light) 70%,
       transparent
     );
-    box-shadow: 0 0 20px rgba(var(--color-primary-rgb), 0.3);
   }
   .hr-styled::before {
-    @apply content-[''] absolute top-1/2 left-1/2 w-6 h-6 
-           bg-[var(--color-primary)] rounded-full 
-           z-2;
+    @apply absolute top-1/2 left-1/2 z-2 h-6 w-6 rounded-full bg-[var(--color-custom-blue-dark)] content-[''];
     transform: translate(-50%, -50%);
     animation: beat 5s infinite ease-in-out;
-    box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.3),
-      0 0 0 8px rgba(var(--color-primary-rgb), 0.2),
-      0 0 20px rgba(var(--color-primary-rgb), 0.5);
   }
   .hr-styled::after {
-    @apply content-[''] absolute top-1/2 left-1/2
-           bg-[rgba(var(--color-secondary-rgb),0.2)] rounded-full;
+    @apply absolute top-1/2 left-1/2 rounded-full content-[''];
     width: 75%;
     height: 10rem;
+    background-color: color-mix(
+      in oklch,
+      var(--color-custom-blue-dark),
+      transparent 20%
+    );
     transform: translate(-50%, -50%);
-    animation: pulse-outer 3s infinite ease-in-out, rotate 6s infinite linear;
+    animation:
+      pulse-outer 3s infinite ease-in-out,
+      rotate 6s infinite linear;
   }
+
   /**w-
   * I encountered conflict with the name "pulse". So i named it "beat"
   **/
@@ -459,26 +532,119 @@ TODO Remove this later
     }
   }
 }
+@layer components {
+  .prose {
+    max-width: 100ch;
+    color: var(--tw-prose-body);
+  }
 
-/**
-* DEFINE SOME CSS CLASS
-* TODO Move it to relevant layer
-**/
-.bg-primary {
-  background-color: var(--color-primary);
-}
-.bg-secondary {
-  background-color: var(--color-secondary);
-}
-.bg-background {
-  background-color: var(--color-background);
-}
-.text-primary {
-  color: var(--color-primary);
-}
-.text-secondary {
-  color: var(--color-secondary);
-}
-.text-text {
-  color: var(--color-text);
+  .prose .lead {
+    color: var(--tw-prose-lead);
+  }
+
+  .prose a {
+    color: var(--tw-prose-links);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .prose strong {
+    color: var(--tw-prose-bold);
+    font-weight: 600;
+  }
+
+  .prose a strong {
+    color: inherit;
+  }
+
+  .prose blockquote strong {
+    color: inherit;
+  }
+
+  .prose thead strong {
+    color: inherit;
+  }
+
+  .prose h1 {
+    color: var(--tw-prose-headings);
+    font-weight: 800;
+    font-size: 2.25rem; /* 36px */
+    margin-top: 0;
+    margin-bottom: 0.8333333em;
+    line-height: 1.1111111;
+  }
+
+  .prose h2 {
+    color: var(--tw-prose-headings);
+    font-weight: 700;
+    font-size: 1.5rem; /* 24px */
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.3333333;
+  }
+
+  .prose h3 {
+    color: var(--tw-prose-headings);
+    font-weight: 600;
+    font-size: 1.25rem; /* 20px */
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+  }
+
+  .prose h4 {
+    color: var(--tw-prose-headings);
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+  }
+
+  .prose code {
+    color: var(--tw-prose-code);
+    font-weight: 600;
+    font-size: 0.875em;
+  }
+
+  .prose a code {
+    color: inherit;
+  }
+
+  .prose h1 code,
+  .prose h2 code,
+  .prose h3 code,
+  .prose h4 code,
+  .prose blockquote code,
+  .prose thead code {
+    color: inherit;
+  }
+
+  .prose pre {
+    color: var(--tw-prose-pre-code);
+    background-color: var(--tw-prose-pre-bg);
+    overflow-x: auto;
+    font-weight: 400;
+    font-size: 0.875em;
+    line-height: 1.7142857;
+    margin: 1.7142857em 0;
+    padding: 0.8571429em 1.1428571em;
+    border-radius: 0.375rem;
+  }
+
+  .prose pre code {
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 0;
+    padding: 0;
+    font-weight: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+  }
+
+  .prose pre code::before,
+  .prose pre code::after {
+    content: none;
+  }
 }

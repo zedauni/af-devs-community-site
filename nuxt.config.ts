@@ -8,7 +8,14 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      title: 'AF Devs Community',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'AF Devs Community' }
+      ],
       link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {
           rel: "preconnect",
           href: 'https://fonts.googleapis.com"',
@@ -34,19 +41,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxtjs/color-mode", "@nuxt/icon", "@vueuse/nuxt"],
-  colorMode: {
-    preference: "system", // default value of $colorMode.preference
-    fallback: "light", // fallback value if not system preference found
-    hid: "nuxt-color-mode-script",
-    globalName: "__NUXT_COLOR_MODE__",
-    componentName: "ColorScheme",
-    classPrefix: "",
-    classSuffix: "",
-    dataValue: "theme",
-    storage: "cookie", // 'localStorage' or 'sessionStorage' or 'cookie'
-    storageKey: "app-color-mode",
-  },
+  modules: ["@nuxt/icon", "@vueuse/nuxt"],
   icon: {
     clientBundle: {
       // list of icons to explicitly include in the client bundle

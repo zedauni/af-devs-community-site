@@ -2,7 +2,7 @@
   <!-- Services Section -->
   <section id="activities">
     <div class="container md:w-9/12 mx-auto px-4" v-animate-on-scroll>
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gradient-p-to-s">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 -text-gradient-p-to-s text-secondary">
         Nos activités
       </h2>
       <div class="text-center mb-12">
@@ -18,7 +18,7 @@
             alt="Hackathons"
             class="w-full h-68 mx-auto mb-8 rounded hover:scale-105 transition-transform ease-in-out duration-[var(--transition-duration)"
           />
-          <h3 class="mb-8 text-xl md:text-2xl font-bold text-gradient-p-to-s">
+          <h3 class="mb-8 text-xl md:text-2xl font-bold -text-gradient-p-to-s">
             Hackathons
           </h3>
           <p class="mb-8">
@@ -35,7 +35,7 @@
             alt="Meetups"
             class="w-full h-68 mx-auto mb-8 rounded hover:scale-105 transition-transform ease-in-out duration-[var(--transition-duration)"
           />
-          <h3 class="mb-8 text-xl md:text-2xl font-bold text-gradient-p-to-s">
+          <h3 class="mb-8 text-xl md:text-2xl font-bold -text-gradient-p-to-s">
             Meetups
           </h3>
           <p class="mb-8">
@@ -52,7 +52,7 @@
             alt="Formations"
             class="w-full h-68 mx-auto mb-8 rounded hover:scale-105 transition-transform ease-in-out duration-[var(--transition-duration)"
           />
-          <h3 class="mb-8 text-xl md:text-2xl font-bold text-gradient-p-to-s">
+          <h3 class="mb-8 text-xl md:text-2xl font-bold -text-gradient-p-to-s">
             Formations
           </h3>
           <p class="mb-8">
@@ -69,7 +69,7 @@
             alt="Collaboration Open-Source"
             class="w-full h-68 mx-auto mb-8 rounded hover:scale-105 transition-transform ease-in-out duration-[var(--transition-duration)"
           />
-          <h3 class="mb-8 text-xl md:text-2xl font-bold text-gradient-p-to-s">
+          <h3 class="mb-8 text-xl md:text-2xl font-bold -text-gradient-p-to-s">
             Collaboration Open-Source
           </h3>
           <p class="mb-8">

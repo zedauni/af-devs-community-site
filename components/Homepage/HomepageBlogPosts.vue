@@ -3,7 +3,7 @@
   <section id="blog">
     <div class="container md:w-9/12 mx-auto px-4" v-animate-on-scroll>
       <h2
-        class="text-3xl md:text-4xl font-bold text-center text-gradient-p-to-s mb-6"
+        class="text-3xl md:text-4xl font-bold text-center -text-gradient-p-to-s text-secondary mb-6"
       >
         Blog & Actualités
       </h2>
@@ -57,13 +57,13 @@
               >
                 {{ post.tag.label }}
               </span>
-              <h3 class="text-xl hover:text-secondary font-semibold mt-2 mb-2">
+              <h3 class="text-xl hover:text-custom-blue font-semibold mt-2 mb-2">
                 {{ post.title }}
               </h3>
               <p class="mb-4">{{ post.description }}</p>
               <a
                 href="#"
-                class="inline-block text-primary font-semibold hover:text-secondary transition-transform hover:translate-x-2 hover:-translate-y-0.25 duration-500"
+                class="inline-block text-primary font-semibold hover:text-custom-blue transition-transform hover:translate-x-2 hover:-translate-y-0.25 duration-500"
                 >Lire l'article →</a
               >
             </div></a

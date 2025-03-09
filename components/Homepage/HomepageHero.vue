@@ -12,7 +12,7 @@
       <div class="md:w-1/2 mb-8 md:mb-0">
         <h2
           id="dynamic-heading"
-          class="text-3xl md:text-4xl pt-4 leading-tight font-bold mb-2 bg-gradient-to-r from-primary to-secondary dark:to-white bg-clip-text text-transparent transition-opacity duration-500 min-h-[5rem] line-clamp-4"
+          class="text-3xl md:text-4xl pt-4 leading-tight font-bold mb-2 bg-gradient-to-r from-custom-blue-dark to-custom-blue-light dark:to-white bg-clip-text text-transparent transition-opacity duration-500 min-h-[5rem] line-clamp-4"
         >
           {{ dynamicHeadingText }}
         </h2>
