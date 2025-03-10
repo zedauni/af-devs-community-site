@@ -94,18 +94,17 @@
   --color-secondary-50: oklch(92.8% 0.0321 32.06);
   --color-secondary: var(--color-secondary-600);
 
-  /** from burnt-sienna **/
-  --color-secondary-dark-900: var(--color-secondary-900);
-  --color-secondary-dark-800: var(--color-secondary-800);
-  --color-secondary-dark-700: var(--color-secondary-700);
-  --color-secondary-dark-600: var(--color-secondary-600);
-  --color-secondary-dark-500: var(--color-secondary-500);
-  --color-secondary-dark-400: var(--color-secondary-400);
-  --color-secondary-dark-300: var(--color-secondary-300);
-  --color-secondary-dark-200: var(--color-secondary-200);
-  --color-secondary-dark-100: var(--color-secondary-100);
-  --color-secondary-dark-50: var(--color-secondary-50);
-  --color-secondary-dark: var(--color-secondary-500);
+  --color-secondary-dark-900: oklch(24.16% 0.0697 36.33);
+  --color-secondary-dark-800: oklch(37.63% 0.1212 34.6);
+  --color-secondary-dark-700: oklch(50.03% 0.1675 34.37);
+  --color-secondary-dark-600: oklch(61.46% 0.2102 33.92);
+  --color-secondary-dark-500: oklch(68.35% 0.1676 34.7);
+  --color-secondary-dark-400: oklch(74.15% 0.1315 35.08);
+  --color-secondary-dark-300: oklch(80.14% 0.0956 34.44);
+  --color-secondary-dark-200: oklch(86.5% 0.0614 34.69);
+  --color-secondary-dark-100: oklch(93.23% 0.0299 33.1);
+  --color-secondary-dark-50: oklch(92.8% 0.0321 32.06);
+  --color-secondary-dark: var(--color-secondary-600);
 
   /** from light-cyan **/
   --color-background-900: oklch(40.6% 0.0661 197.8);
@@ -201,128 +200,6 @@
 }
 
 @layer utilities {
-  /**
-  * I have overridden the `space-y-*` and `space-x-*` utilities because I am experiencing issues with these classes in production (but not in development).
-  * TODO Fix issues and remove all space-y-* and space-x-* class 
-  **/
-  .space-y-2 > :not(:last-child) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(
-      calc(var(--spacing) * 2) * var(--tw-space-y-reverse)
-    );
-    margin-block-end: calc(
-      calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse))
-    );
-  }
-  .space-y-4 > :not(:last-child) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(
-      calc(var(--spacing) * 4) * var(--tw-space-y-reverse)
-    );
-    margin-block-end: calc(
-      calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse))
-    );
-  }
-  .space-y-6 > :not(:last-child) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(
-      calc(var(--spacing) * 6) * var(--tw-space-y-reverse)
-    );
-    margin-block-end: calc(
-      calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse))
-    );
-  }
-  .space-y-8 > :not(:last-child) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(
-      calc(var(--spacing) * 8) * var(--tw-space-y-reverse)
-    );
-    margin-block-end: calc(
-      calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse))
-    );
-  }
-  .space-y-10 > :not(:last-child) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(
-      calc(var(--spacing) * 10) * var(--tw-space-y-reverse)
-    );
-    margin-block-end: calc(
-      calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse))
-    );
-  }
-  .space-y-14 > :not(:last-child) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(
-      calc(var(--spacing) * 14) * var(--tw-space-y-reverse)
-    );
-    margin-block-end: calc(
-      calc(var(--spacing) * 14) * calc(1 - var(--tw-space-y-reverse))
-    );
-  }
-  .space-x-2 > :not(:last-child) {
-    --tw-space-x-reverse: 0;
-    margin-inline-start: calc(
-      calc(var(--spacing) * 2) * var(--tw-space-x-reverse)
-    );
-    margin-inline-end: calc(
-      calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse))
-    );
-  }
-  .space-x-4 > :not(:last-child) {
-    --tw-space-x-reverse: 0;
-    margin-inline-start: calc(
-      calc(var(--spacing) * 4) * var(--tw-space-x-reverse)
-    );
-    margin-inline-end: calc(
-      calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse))
-    );
-  }
-  .space-x-6 > :not(:last-child) {
-    --tw-space-x-reverse: 0;
-    margin-inline-start: calc(
-      calc(var(--spacing) * 6) * var(--tw-space-x-reverse)
-    );
-    margin-inline-end: calc(
-      calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse))
-    );
-  }
-  .space-x-8 > :not(:last-child) {
-    --tw-space-x-reverse: 0;
-    margin-inline-start: calc(
-      calc(var(--spacing) * 8) * var(--tw-space-x-reverse)
-    );
-    margin-inline-end: calc(
-      calc(var(--spacing) * 8) * calc(1 - var(--tw-space-x-reverse))
-    );
-  }
-  .space-x-10 > :not(:last-child) {
-    --tw-space-x-reverse: 0;
-    margin-inline-start: calc(
-      calc(var(--spacing) * 10) * var(--tw-space-x-reverse)
-    );
-    margin-inline-end: calc(
-      calc(var(--spacing) * 10) * calc(1 - var(--tw-space-x-reverse))
-    );
-  }
-  .space-x-12 > :not(:last-child) {
-    --tw-space-x-reverse: 0;
-    margin-inline-start: calc(
-      calc(var(--spacing) * 12) * var(--tw-space-x-reverse)
-    );
-    margin-inline-end: calc(
-      calc(var(--spacing) * 12) * calc(1 - var(--tw-space-x-reverse))
-    );
-  }
-  .space-x-14 > :not(:last-child) {
-    --tw-space-x-reverse: 0;
-    margin-inline-start: calc(
-      calc(var(--spacing) * 14) * var(--tw-space-x-reverse)
-    );
-    margin-inline-end: calc(
-      calc(var(--spacing) * 14) * calc(1 - var(--tw-space-x-reverse))
-    );
-  }
-
   .text-gradient-p-to-s {
     @apply text-transparent;
     background: linear-gradient(

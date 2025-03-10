@@ -161,7 +161,7 @@
             </div>
             <div class="mt-12 md:mt-0">
               <div class="w-full">
-                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d" alt="Ads in footer" class="inset-0" />
+                <img src="https://placehold.co/250x250/e84d4d/white?text=Ads&grayscale&font=playfair-display" alt="Ads in footer" class="inset-0" />
               </div>
             </div>
           </div>
