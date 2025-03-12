@@ -1,6 +1,6 @@
 <template>
   <div
-    class="group relative flex w-full overflow-hidden rounded-lg border border-gray-200 bg-white transition-transform dark:border-gray-700 dark:bg-gray-800"
+    class="group relative flex h-full w-full overflow-hidden rounded-lg border border-gray-200 bg-white transition-transform dark:border-gray-700 dark:bg-gray-800"
     :class="viewMode === 'list' ? '' : 'flex-col'"
   >
     <div
@@ -19,15 +19,15 @@
       <div class="flex items-center space-x-2">
         <span
           v-for="tag in article.tags"
-          :key="tag"
+          :key="tag.title"
           class="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary-700 dark:bg-primary-800 dark:text-primary-300"
         >
-          <a href="#">
-            {{ tag }}
-          </a>
+          <TagLink :tag="tag">
+            {{ tag.title }}
+          </TagLink>
         </span>
       </div>
-      <h3 class="text-sm font-medium text-gray-900 dark:text-white">
+      <h3 class="text-sm font-medium text-gray-900 dark:text-white hover:font-semibold">
         <a :href="article.href">
           {{ article.title }}
         </a>
@@ -37,15 +37,19 @@
       </p>
       <div class="mt-auto flex items-center">
         <div class="flex-shrink-0">
-          <img
-            class="h-8 w-8 rounded-full"
-            :src="article.author.imageUrl"
-            :alt="article.author.name"
-          />
+          <AuthorLink :author="article.author">
+            <img
+              class="h-8 w-8 rounded-full"
+              :src="article.author.imageUrl"
+              :alt="article.author.name"
+            />
+          </AuthorLink>
         </div>
         <div class="ml-2 space-y-1">
           <p class="text-xs font-medium text-gray-900 dark:text-white">
-            {{ article.author.name }}
+            <AuthorLink :author="article.author" class="hover:text-secondary">
+              {{ article.author.name }}
+            </AuthorLink>
           </p>
           <div class="flex space-x-1 text-xs text-gray-500 dark:text-gray-400">
             <time :datetime="article.datetime">{{ article.date }}</time>
@@ -59,22 +63,10 @@
 </template>
 
 <script setup lang="ts">
+import type { Article } from "~/schema/article";
+
 defineProps<{
-  viewMode: string;
-  article: {
-    id: string;
-    title: string;
-    href: string;
-    description: string;
-    imageUrl: string;
-    date: string;
-    datetime: string;
-    tags: string[];
-    readingTime: string;
-    author: {
-      name: string;
-      imageUrl: string;
-    };
-  };
+  viewMode?: string;
+  article: Article;
 }>();
 </script>

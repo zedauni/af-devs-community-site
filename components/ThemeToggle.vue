@@ -7,7 +7,7 @@
     <Icon
       id="theme-mode"
       :name="colorModeIcon"
-      :size="props.size"
+      :size="size ?? '1.3em'"
       class="rounded-full fill-gray-700 text-gray-700 dark:fill-gray-200 dark:text-gray-200"
       :class="colorModeIconColor"
       :title="colorModeTitle"
@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ size?: string }>();
+defineProps<{ size?: string }>();
 
 const { themeMode, toggleDarkMode, forceSystemMode } = useThemeMode();
 

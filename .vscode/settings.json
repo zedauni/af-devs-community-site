@@ -6,6 +6,7 @@
     "github",
     "nuxt",
     "nuxtjs",
+    "pinia",
     "tailwindcss",
     "vueuse"
   ]

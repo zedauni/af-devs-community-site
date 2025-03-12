@@ -197,11 +197,14 @@
   h4.colored {
     @apply text-secondary;
   }
+  button{
+    @apply cursor-pointer;
+  }
 }
 
 @layer utilities {
   .text-gradient-p-to-s {
-    @apply text-transparent;
+    @apply text-transparent leading-tight;
     background: linear-gradient(
       45deg,
       var(--color-custom-blue-dark),
@@ -255,45 +258,6 @@
   }
 
   /**
-  * Try to reproduce @A_liou bouton effect
-  **/
-  .btn-with-gradient {
-    @apply relative inline-block overflow-hidden rounded-4xl border-2 border-[var(--color-border)] bg-transparent transition-transform duration-[var(--transition-duration)] ease-in-out;
-  }
-  .btn-with-gradient:hover {
-    @apply border-transparent text-white;
-    box-shadow: 0 4px 15px rgba(var(--color-custom-blue-dark), 0.3);
-  }
-  /* Before element (gradient) starts from left */
-  .btn-with-gradient::before {
-    @apply absolute top-0 left-0 -z-1 h-full w-full bg-[linear-gradient(45deg,var(--color-custom-blue-dark),var(--color-custom-blue))] content-[''];
-  }
-
-  /**
-  * Try to reproduce @A_liou bouton (hover) effect
-  * TODO Make it more smooth
-  **/
-  .btn-hover-gradient {
-    @apply relative inline-block overflow-hidden rounded-4xl border-2 border-[var(--color-border)] bg-transparent transition-transform duration-[var(--transition-duration)] ease-in-out;
-  }
-  .btn-hover-gradient:hover {
-    @apply border-transparent text-white;
-    box-shadow: 0 4px 15px rgba(var(--color-custom-blue-dark), 0.3);
-  }
-  /* Before element (gradient) starts from left */
-  .btn-hover-gradient::before {
-    @apply absolute top-0 left-0 -z-1 h-full w-full origin-left scale-x-0 bg-[linear-gradient(45deg,var(--color-custom-blue-dark),var(--color-custom-blue))] transition-transform duration-[var(--transition-duration)] content-[''];
-  }
-  /* On hover, the gradient expands from left to right */
-  .btn-hover-gradient:hover::before {
-    @apply origin-left scale-x-100;
-  }
-  /* When the hover effect is removed, retract from the right */
-  .btn-hover-gradient:not(:hover)::before {
-    @apply origin-right;
-  }
-
-  /**
   * Try to reproduce @A_liou animated home image effect
   **/
   /* .home-img container styles */
@@ -318,30 +282,18 @@
   }
 
   /**
-  * Try to reproduce @A_liou ripple effect on button
+  * Try to reproduce @A_liou bouton effect
   **/
-  /* Button base styles */
-  .btn-ripple {
-    @apply relative mx-auto w-fit rounded-[30px] px-10 py-4 font-semibold text-white shadow-lg transition-transform duration-300;
-    background: linear-gradient(
-      45deg,
-      var(--color-custom-blue-light),
-      var(--color-custom-blue-dark),
-      var(--color-custom-blue-light)
-    );
-    background-size: 200% 200%;
-    animation: gradient-animation 6s ease infinite;
+  .btn-with-gradient {
+    @apply relative inline-block overflow-hidden rounded-4xl border-2 border-[var(--color-border)] bg-transparent transition-transform duration-[var(--transition-duration)] ease-in-out;
   }
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  .btn-with-gradient:hover {
+    @apply border-transparent text-white;
+    box-shadow: 0 4px 15px rgba(var(--color-custom-blue-dark), 0.3);
+  }
+  /* Before element (gradient) starts from left */
+  .btn-with-gradient::before {
+    @apply absolute top-0 left-0 -z-1 h-full w-full bg-[linear-gradient(45deg,var(--color-custom-blue-dark),var(--color-custom-blue))] content-[''];
   }
 
   /**
@@ -410,6 +362,25 @@
   }
 }
 @layer components {
+  .btn {
+    @apply cursor-pointer inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-primary-500 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 dark:bg-primary-800 dark:hover:bg-primary-900;
+  }
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600 dark:bg-secondary-800 dark:hover:bg-secondary-900;
+  }
+  .btn-sm {
+    @apply h-9 rounded-md px-3;
+  }
+  .btn-md {
+    @apply h-10 px-4 py-2;
+  }
+  .btn-lg {
+    @apply h-11 rounded-md px-8;
+  }
+
   .prose {
     max-width: 100ch;
     color: var(--tw-prose-body);
@@ -523,5 +494,56 @@
   .prose pre code::before,
   .prose pre code::after {
     content: none;
+  }
+
+  /**
+  * Try to reproduce @A_liou bouton (hover) effect
+  * TODO Make it more smooth
+  **/
+  .btn-hover-gradient {
+    @apply relative inline-block overflow-hidden rounded-4xl border-2 border-[var(--color-border)] bg-transparent transition-transform duration-[var(--transition-duration)] ease-in-out;
+  }
+  .btn-hover-gradient:hover {
+    @apply border-transparent text-white;
+    box-shadow: 0 4px 15px rgba(var(--color-custom-blue-dark), 0.3);
+  }
+  /* Before element (gradient) starts from left */
+  .btn-hover-gradient::before {
+    @apply absolute top-0 left-0 -z-1 h-full w-full origin-left scale-x-0 bg-[linear-gradient(45deg,var(--color-custom-blue-dark),var(--color-custom-blue))] transition-transform duration-[var(--transition-duration)] content-[''];
+  }
+  /* On hover, the gradient expands from left to right */
+  .btn-hover-gradient:hover::before {
+    @apply origin-left scale-x-100;
+  }
+  /* When the hover effect is removed, retract from the right */
+  .btn-hover-gradient:not(:hover)::before {
+    @apply origin-right;
+  }
+
+  /**
+  * Try to reproduce @A_liou ripple effect on button
+  **/
+  /* Button base styles */
+  .btn-ripple {
+    @apply relative mx-auto w-fit rounded-[30px] px-10 py-4 font-semibold text-white shadow-lg transition-transform duration-300;
+    background: linear-gradient(
+      45deg,
+      var(--color-custom-blue-light),
+      var(--color-custom-blue-dark),
+      var(--color-custom-blue-light)
+    );
+    background-size: 200% 200%;
+    animation: gradient-animation 6s ease infinite;
+  }
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }

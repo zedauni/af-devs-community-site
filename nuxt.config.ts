@@ -41,7 +41,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/icon", "@vueuse/nuxt"],
+  modules: ["@nuxt/icon", "@vueuse/nuxt", '@pinia/nuxt'],
   icon: {
     clientBundle: {
       // list of icons to explicitly include in the client bundle
