@@ -45,7 +45,7 @@ export default defineNuxtConfig({
   icon: {
     clientBundle: {
       // list of icons to explicitly include in the client bundle
-      icons: ["ri:moon-clear-line", "ri:sun-fill", "ri:computer-line"],
+      icons: ["ri:moon-clear-line", "ri:sun-fill", "ri:computer-line", "ri:arrow-up-s-line", "ri:arrow-down-s-line"],
       // scan this folders for icons to include in the client bundle
       scan: {
         globInclude: [
