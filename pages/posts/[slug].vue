@@ -415,6 +415,11 @@ npx tailwindcss init</code></pre>
 import { ArticleCard } from "#components";
 import type { Article } from "~/schema/article";
 
+// Define route name
+definePageMeta({
+  name: "posts-slug",
+});
+
 // Author data
 const author = {
   name: "Thomas Smith",

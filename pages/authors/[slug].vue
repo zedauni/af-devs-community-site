@@ -250,6 +250,11 @@
 <script lang="ts" setup>
 import type { Article } from '~/schema/article';
 
+// Define route name
+definePageMeta({
+  name: "authors-slug",
+});
+
 // Get latest articles just for prototyping
 const articleStore = useArticleStore()
 const articles = ref<Article[]>(articleStore.getLatestArticles(4));

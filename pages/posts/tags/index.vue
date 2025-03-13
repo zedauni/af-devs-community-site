@@ -39,7 +39,9 @@
 </template>
 
 <script setup lang="ts">
+// Define route name and set route path
 definePageMeta({
+  name: "tags",
   path: "/tags",
 });
 

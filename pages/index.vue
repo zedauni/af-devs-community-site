@@ -11,3 +11,10 @@
     <HomepageContact />
   </div>
 </template>
+
+<script setup lang="ts">
+// Define route name
+definePageMeta({
+  name: "home",
+});
+</script>

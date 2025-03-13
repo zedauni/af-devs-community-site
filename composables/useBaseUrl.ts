@@ -5,8 +5,9 @@
  */
 export const useBaseUrl = (path: string): string => {
   const config = useRuntimeConfig();
+  const baseURL = config.public.baseURL || "/";
   // Remove leading slashes from the path
   const normalizedPath = path.replace(/^\/+/, '');
   // Combine baseURL and normalized path
-  return `${config.public.baseURL}${normalizedPath}`;
+  return `${baseURL}${normalizedPath}`;
 }

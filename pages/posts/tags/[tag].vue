@@ -92,7 +92,9 @@
 import type { Article } from "~/schema/article";
 import type { Tag } from "~/schema/tag";
 
+// Define route name and set route path
 definePageMeta({
+  name: "tags-slug",
   path: "/tags/:slug",
 });
 

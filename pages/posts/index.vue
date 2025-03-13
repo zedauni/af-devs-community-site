@@ -249,6 +249,11 @@ import type { Article } from "~/schema/article";
 import type { Tag } from "~/schema/tag";
 import { useArticleStore } from "~/stores/useArticleStore";
 
+// Define route name
+definePageMeta({
+  name: "posts",
+});
+
 type ViewType = "grid" | "list";
 
 // View mode (grid/list)
