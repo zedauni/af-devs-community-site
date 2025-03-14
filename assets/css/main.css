@@ -207,6 +207,10 @@
     @apply text-secondary;
   }
 
+  .not-prose .also-read a {
+    text-decoration-line: none !important;
+  }
+
   .text-decoration-primary {
     @apply leading-tight text-transparent;
     background: linear-gradient(

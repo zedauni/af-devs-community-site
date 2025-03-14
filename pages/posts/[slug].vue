@@ -169,15 +169,17 @@
                 <div
                   class="mt-2 text-sm text-primary-700 dark:text-primary-200"
                 >
-                  <p>
-                    <AppLink
-                      :to="{name: 'posts-slug', params: {slug: '10-tailwind-css-tips-and-tricks-every-developer-should-know'}}"
-                      class="font-medium text-primary-600 hover:text-primary-500 dark:text-primary-400 dark:hover:text-primary-300"
-                    >
-                      10 Tailwind CSS Tips and Tricks Every Developer Should
-                      Know
-                    </AppLink>
-                  </p>
+                  <AppLink
+                    :to="{
+                      name: 'posts-slug',
+                      params: {
+                        slug: 'sample-article',
+                      },
+                    }"
+                    class="also-read font-medium text-primary-600 no-underline hover:text-primary-500 dark:text-primary-400 dark:hover:text-primary-300"
+                  >
+                    10 Tailwind CSS Tips and Tricks Every Developer Should Know
+                  </AppLink>
                 </div>
               </div>
             </div>
@@ -239,6 +241,7 @@ npx tailwindcss init</code></pre>
                 :key="article.id"
                 :article="article"
                 viewMode="list"
+                class="also-read"
               />
             </div>
           </div>
@@ -305,31 +308,31 @@ npx tailwindcss init</code></pre>
           </h2>
           <div class="flex flex-wrap gap-2">
             <AppLink
-              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
+              :to="{ name: 'tags-slug', params: { slug: 'dev' } }"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               Tailwind CSS
             </AppLink>
             <AppLink
-              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
+              :to="{ name: 'tags-slug', params: { slug: 'dev' } }"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               Nuxt 3
             </AppLink>
             <AppLink
-              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
+              :to="{ name: 'tags-slug', params: { slug: 'dev' } }"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               TypeScript
             </AppLink>
             <AppLink
-              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
+              :to="{ name: 'tags-slug', params: { slug: 'dev' } }"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               Web Development
             </AppLink>
             <AppLink
-              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
+              :to="{ name: 'tags-slug', params: { slug: 'dev' } }"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               Frontend
