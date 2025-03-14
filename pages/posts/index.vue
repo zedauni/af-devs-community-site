@@ -1,6 +1,6 @@
 <template>
   <main
-    class="relative container mx-auto px-4 py-12 transition-colors duration-300 sm:px-6 md:w-9/12"
+    class="relative container mx-auto px-4 py-12 transition-colors duration-[var(--transition-duration)]sm:px-6 md:w-9/12"
   >
     <!-- Hero Section -->
     <div

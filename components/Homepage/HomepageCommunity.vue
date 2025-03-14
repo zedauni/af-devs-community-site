@@ -26,7 +26,7 @@
         </p>
         <ul class="mb-8 space-y-4">
           <li
-            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+            class="flex items-center transition-transform duration-[var(--transition-duration)] hover:translate-x-2"
           >
             <Icon
               name="ri:arrow-right-double-fill"
@@ -36,7 +36,7 @@
             Accès à des ressources exclusives et tutoriels
           </li>
           <li
-            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+            class="flex items-center transition-transform duration-[var(--transition-duration)] hover:translate-x-2"
           >
             <Icon
               name="ri:arrow-right-double-fill"
@@ -46,7 +46,7 @@
             Réseautage avec des développeurs talentueux à travers l'Afrique
           </li>
           <li
-            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+            class="flex items-center transition-transform duration-[var(--transition-duration)] hover:translate-x-2"
           >
             <Icon
               name="ri:arrow-right-double-fill"
@@ -56,7 +56,7 @@
             Participation à des projets open-source innovants
           </li>
           <li
-            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+            class="flex items-center transition-transform duration-[var(--transition-duration)] hover:translate-x-2"
           >
             <Icon
               name="ri:arrow-right-double-fill"
@@ -66,7 +66,7 @@
             Invitations à des événements et hackathons
           </li>
           <li
-            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+            class="flex items-center transition-transform duration-[var(--transition-duration)] hover:translate-x-2"
           >
             <Icon
               name="ri:arrow-right-double-fill"
@@ -79,7 +79,7 @@
         <div class="flex justify-center md:justify-start">
           <AppLink
             :to="{ name: 'join' }"
-            class="btn-with-gradient inline-flex items-center rounded-full px-6 py-3 font-bold text-pale-gray drop-shadow-2xl transition-colors duration-300 hover:bg-primary-dark"
+            class="btn-with-gradient inline-flex items-center rounded-full px-6 py-3 font-bold text-pale-gray drop-shadow-2xl transition-colors duration-[var(--transition-duration)] hover:bg-primary-dark"
           >
             <div class="mx-auto flex items-center justify-center">
               <Icon name="ri:group-2-line" class="mr-2 text-2xl" />

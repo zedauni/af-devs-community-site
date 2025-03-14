@@ -11,7 +11,7 @@
         <img
           :src="article.imageUrl"
           :alt="article.title"
-          class="h-full w-full object-cover object-center transition-transform duration-300 hover:scale-105 sm:h-full sm:w-full"
+          class="h-full w-full object-cover object-center transition-transform duration-[var(--transition-duration-x3)] hover:scale-105 sm:h-full sm:w-full"
         />
       </AppLink>
     </div>

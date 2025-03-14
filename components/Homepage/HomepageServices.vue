@@ -13,12 +13,12 @@
       </div>
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div
-          class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-500 hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
+          class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-[var(--transition-duration)] hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
         >
           <img
             src="~/assets/img/services1.svg"
             alt="Hackathons"
-            class="duration-[var(--transition-duration) mx-auto mb-8 h-68 w-full rounded transition-transform ease-in-out hover:scale-105"
+            class="duration-[var(--transition-duration)]mx-auto mb-8 h-68 w-full rounded transition-transform ease-in-out hover:scale-105"
           />
           <h3 class="mb-8 text-xl font-bold md:text-2xl">Hackathons</h3>
           <p class="mb-8">
@@ -30,12 +30,12 @@
           >
         </div>
         <div
-          class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-500 hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
+          class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-[var(--transition-duration)] hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
         >
           <img
             src="~/assets/img/services2.svg"
             alt="Meetups"
-            class="duration-[var(--transition-duration) mx-auto mb-8 h-68 w-full rounded transition-transform ease-in-out hover:scale-105"
+            class="duration-[var(--transition-duration)]mx-auto mb-8 h-68 w-full rounded transition-transform ease-in-out hover:scale-105"
           />
           <h3 class="mb-8 text-xl font-bold md:text-2xl">Meetups</h3>
           <p class="mb-8">
@@ -47,12 +47,12 @@
           >
         </div>
         <div
-          class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-500 hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
+          class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-[var(--transition-duration)]hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
         >
           <img
             src="~/assets/img/services3.svg"
             alt="Formations"
-            class="duration-[var(--transition-duration) mx-auto mb-8 h-68 w-full rounded transition-transform ease-in-out hover:scale-105"
+            class="duration-[var(--transition-duration)]mx-auto mb-8 h-68 w-full rounded transition-transform ease-in-out hover:scale-105"
           />
           <h3 class="mb-8 text-xl font-bold md:text-2xl">Formations</h3>
           <p class="mb-8">
@@ -64,12 +64,12 @@
           >
         </div>
         <div
-          class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-500 hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
+          class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-[var(--transition-duration)]hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
         >
           <img
             src="~/assets/img/services4.svg"
             alt="Collaboration Open-Source"
-            class="duration-[var(--transition-duration) mx-auto mb-8 h-68 w-full rounded transition-transform ease-in-out hover:scale-105"
+            class="duration-[var(--transition-duration)]mx-auto mb-8 h-68 w-full rounded transition-transform ease-in-out hover:scale-105"
           />
           <h3 class="mb-8 text-xl font-bold md:text-2xl">
             Collaboration Open-Source

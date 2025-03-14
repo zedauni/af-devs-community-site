@@ -6,7 +6,7 @@
       v-animate-on-scroll="{
         hidden: 'opacity-0 translate-y-0',
         visible: 'opacity-100 translate-y-10',
-        transition: 'transition-all duration-1000 ease-out',
+        transition: 'transition-transform duration-[var(--transition-duration)] ease-out',
       }"
     >
       <div class="mb-8 md:mb-0 md:w-1/2">
@@ -25,7 +25,7 @@
         <div class="text-center md:text-left">
           <AppLink
             :to="{ name: 'join' }"
-            class="btn-ripple inline-block rounded-full px-6 py-3 font-bold text-gray-100 drop-shadow-2xl transition-colors duration-300"
+            class="btn-ripple inline-block rounded-full px-6 py-3 font-bold text-gray-100 drop-shadow-2xl transition-colors duration-[var(--transition-duration-x3)]"
             >Rejoignez la révolution</AppLink
           >
         </div>

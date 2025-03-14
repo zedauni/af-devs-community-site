@@ -21,7 +21,7 @@ useHeadSafe({
       "text-light",
       "dark:text-dark",
       "transition-colors",
-      "duration-300",
+      "duration-[var(--transition-duration)]",
     ],
   },
 });

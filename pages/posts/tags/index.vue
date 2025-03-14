@@ -25,7 +25,7 @@
         :key="tag.title"
         :tag="tag"
         :class="[
-          'm-2 scale-105 cursor-pointer rounded-full px-3 py-1 shadow-xs shadow-gray-400/50 transition-transform duration-300 ease-in-out dark:shadow-gray-50/25',
+          'm-2 scale-105 cursor-pointer rounded-full px-3 py-1 shadow-xs shadow-gray-400/50 transition-transform duration-[var(--transition-duration)] ease-in-out dark:shadow-gray-50/25',
           getTagClass(tag.frequency),
         ]"
       >

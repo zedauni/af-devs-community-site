@@ -255,7 +255,7 @@
         <div>
           <button
             type="submit"
-            class="flex w-full items-center justify-center rounded-lg bg-primary-500 px-6 py-3 text-white transition-colors duration-200 hover:shadow hover:shadow-gray-500 dark:bg-primary-800/50"
+            class="flex w-full items-center justify-center rounded-lg bg-primary-500 px-6 py-3 text-white transition-colors duration-[var(--transition-duration-x2)] hover:shadow hover:shadow-gray-500 dark:bg-primary-800/50"
             :disabled="isSubmitting"
           >
             <Icon

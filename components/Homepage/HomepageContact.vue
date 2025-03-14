@@ -16,7 +16,7 @@
         class="rounded-lg border border-gray-100 p-12 shadow-md md:w-1/2 dark:border-gray-50/10"
       >
         <h2
-          class="mb-6 origin-left text-3xl font-bold text-secondary transition-transform duration-100 hover:scale-x-102 md:text-4xl"
+          class="mb-6 origin-left text-3xl font-bold text-secondary transition-transform duration-[var(--transition-duration)] hover:scale-x-102 md:text-4xl"
         >
           Contactez-nous
         </h2>

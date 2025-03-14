@@ -130,7 +130,9 @@
   --color-background-dark-50: oklch(93.35% 0.0087 264.5);
   --color-background-dark: var(--color-background-dark-600);
 
-  --transition-duration: 0.3s;
+  --transition-duration: 0.1s;
+  --transition-duration-x2: 0.2s;
+  --transition-duration-x3: 0.3s;
 }
 
 @layer base {
@@ -274,7 +276,7 @@
   }
   /* Styles for images within .home-img */
   .home-img img {
-    @apply h-auto w-full max-w-full rounded-[calc(var(--border-radius-base)_+_3px)] object-contain drop-shadow-[0_0_30px_rgba(91,66,243,0.25)] transition-transform duration-1000 ease-in-out hover:scale-105;
+    @apply h-auto w-full max-w-full rounded-[calc(var(--border-radius-base)_+_3px)] object-contain drop-shadow-[0_0_30px_rgba(91,66,243,0.25)] transition-transform duration-500 ease-in-out hover:scale-105;
   }
   .animate-float-img {
     animation: float-image 6s ease-in-out infinite alternate;
@@ -532,7 +534,7 @@
   **/
   /* Button base styles */
   .btn-ripple {
-    @apply relative mx-auto w-fit rounded-[30px] px-10 py-4 font-semibold text-white shadow-lg transition-transform duration-300;
+    @apply relative mx-auto w-fit rounded-[30px] px-10 py-4 font-semibold text-white shadow-lg transition-transform duration-[var(--transition-duration-x3)];
     background: linear-gradient(
       45deg,
       var(--color-custom-blue-light),
