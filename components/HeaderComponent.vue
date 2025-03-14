@@ -4,13 +4,16 @@
     id="main-header"
     class="fixed top-0 left-0 z-50 mx-auto w-full border-b border-gray-200 bg-white/80 shadow-sm backdrop-blur-md transition-colors duration-300 dark:border-gray-50/10 dark:bg-gray-900/80"
   >
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 md:w-9/12">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
           <div class="flex-shrink-0">
-            <AppLink :to="{ name: 'home' }" class="text-2xl font-bold">
-              AF-<span class="-text-custom-blue-dark text-secondary">DEV</span>
-            </AppLink>
+            <h1
+              @click="navigateTo({ name: 'home' })"
+              class="cursor-pointer font-default text-2xl font-bold"
+            >
+              AF-<span class="text-secondary">DEV</span>
+            </h1>
           </div>
         </div>
         <div class="flex items-center space-x-4">
@@ -33,16 +36,15 @@
                         : { name: item.routeName }
                   "
                   :class="[
-                    'inline-flex items-center px-5 pt-1 text-base font-medium transition-colors',
-                    'hover:text-gray-900 dark:hover:text-gray-50',
+                    'text-md ease-in-outhover:text-gray-900 inline-flex items-center px-5 pt-1 transition-colors dark:hover:text-gray-50',
                     { 'underline-hover-effect': !item.submenu },
                     {
-                      'after:absolute after:-bottom-5 after:h-5 after:w-1/2':
+                      'after:absolute after:-bottom-5 after:h-5 after:w-full':
                         item.submenu,
                     },
                     item.submenu?.some((subitem) => subitem.current)
-                      ? 'text-secondary'
-                      : 'text-gray-700 dark:text-gray-200',
+                      ? 'font-bold text-secondary'
+                      : 'font-medium text-gray-700 dark:text-gray-200',
                   ]"
                   @click.prevent="toggleSubmenu(item.name, true, true)"
                 >
@@ -78,7 +80,7 @@
                           ? getHref(subitem)
                           : { name: subitem.routeName }
                       "
-                      class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
+                      class="text-md block px-4 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
                       role="menuitem"
                     >
                       {{ subitem.name }}
@@ -136,8 +138,10 @@
                       : { name: item.routeName }
                 "
                 :class="[
-                  'block w-full border-l-4 border-transparent py-2 pr-4 pl-3 text-base font-medium',
-                  'text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300',
+                  'text-md block w-full border-l-4 border-transparent py-2 pr-4 pl-3 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-gray-300',
+                  item.submenu?.some((subitem) => subitem.current)
+                    ? 'font-bold text-secondary'
+                    : 'font-medium text-gray-500 dark:text-gray-400',
                 ]"
                 @click.prevent="
                   item.submenu ? toggleMobileSubmenu(item.name) : null
@@ -177,7 +181,7 @@
                       ? getHref(subitem)
                       : { name: subitem.routeName }
                   "
-                  class="block border-l-4 border-transparent py-2 pr-4 pl-3 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                  class="text-md block border-l-4 border-transparent py-2 pr-4 pl-3 font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
                 >
                   {{ subitem.name }}
                 </AppLink>
@@ -226,13 +230,16 @@ const toggleMobileSubmenu = (name: string) => {
  */
 const closeSubmenu = (force = false) => {
   if (force || !submenuKeepOpen.value) {
-    openedSubmenu.value = null;
+    // Use timeout to avoid flickering
+    setTimeout(() => {
+      openedSubmenu.value = null;
+    });
   }
 };
 
 /**
  * Opens submenu of the given menu name by setting its name in openedSubmenu.
- * 
+ *
  * @param {string} name - Name of menu to open the submenu for.
  * @param {boolean} [keepOpen=false] - Whether to keep the submenu open even after mouse leave.
  */
@@ -244,12 +251,12 @@ const openSubmenu = (name: string, keepOpen = false) => {
 
 /**
  * Toggles submenu of the given menu name.
- * 
+ *
  * If the submenu for the given menu name is currently open, it will be closed.
  * The force flag can be used to force the submenu to close, even if submenuKeepOpen is true.
  * If the submenu is closed, it will be opened.
  * The keepOpen flag can be used to keep the submenu open even after mouse leave.
- * 
+ *
  * @param {string} name - Name of menu to toggle the submenu for.
  * @param {boolean} [keepOpen=false] - Whether to keep the submenu open even after mouse leave.
  * @param {boolean} [force=false] - If true, forces the submenu to close, even if
