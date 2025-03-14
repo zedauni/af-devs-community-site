@@ -5,6 +5,7 @@
 
 @theme {
   --default-font-family: "Poppins", serif;
+  --font-default: "Poppins", serif;
   --font-poppins: "Poppins", serif;
   --font-manrope: "Manrope", serif;
   --font-nunito: "Nunito", serif;
@@ -38,10 +39,7 @@
   --color-wb-light: oklch(100% 0 none);
   --color-wb-dark: oklch(0% 0 none);
   --color-wb: var(--color-wb-light);
-
-  --color-bw-light: oklch(0% 0 none);
-  --color-bw-dark: oklch(100% 0 none);
-  --color-bw: var(--color-bw-light);
+  --color-wb-invert: var(--color-wb-dark);
 
   --color-main-bg-light: oklch(98.51% 0 none);
   --color-main-bg-dark: oklch(21.01% 0.0318 264.7);
@@ -104,7 +102,7 @@
   --color-secondary-dark-200: oklch(86.5% 0.0614 34.69);
   --color-secondary-dark-100: oklch(93.23% 0.0299 33.1);
   --color-secondary-dark-50: oklch(92.8% 0.0321 32.06);
-  --color-secondary-dark: var(--color-secondary-600);
+  --color-secondary-dark: var(--color-secondary-500);
 
   /** from light-cyan **/
   --color-background-900: oklch(40.6% 0.0661 197.8);
@@ -140,7 +138,7 @@
   /* This method is the best since we can manage the dark mode in the useThemeMode composable, store user preference in cookie, and switch between modes without directly relying on browser preferences. So user can choose to bypass the browser dark mode preference or restore it when they want */
   .dark {
     --color-wb: var(--color-wb-dark);
-    --color-bw: var(--color-bw-dark);
+    --color-wb-invert: var(--color-wb-light);
     --color-text: var(--color-dark);
     --color-border: var(--color-border-dark);
     --color-border: var(--color-border-dark);
@@ -197,14 +195,20 @@
   h4.colored {
     @apply text-secondary;
   }
-  button{
+  button {
     @apply cursor-pointer;
   }
 }
 
 @layer utilities {
-  .text-gradient-p-to-s {
-    @apply text-transparent leading-tight;
+
+  /* Styles for main navbar active links */
+  #main-header .app-link-active {
+    @apply text-secondary;
+  }
+
+  .text-decoration-primary {
+    @apply leading-tight text-transparent;
     background: linear-gradient(
       45deg,
       var(--color-custom-blue-dark),
@@ -240,8 +244,7 @@
     position: relative;
   }
   .underline-hover-effect::after {
-    content: "";
-    @apply absolute bottom-[-10px] left-0 h-[3px] w-full;
+    @apply absolute -bottom-2.5 left-0 h-1 w-full content-[''];
     background: linear-gradient(
       90deg,
       var(--color-custom-blue-dark),
@@ -363,7 +366,7 @@
 }
 @layer components {
   .btn {
-    @apply cursor-pointer inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-primary-500 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex cursor-pointer items-center justify-center rounded-md text-sm font-medium ring-offset-primary-500 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-primary {
     @apply bg-primary-500 text-white hover:bg-primary-600 dark:bg-primary-800 dark:hover:bg-primary-900;
