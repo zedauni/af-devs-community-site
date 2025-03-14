@@ -36,15 +36,24 @@
           </h1>
           <div class="mt-6 flex items-center">
             <div class="flex-shrink-0">
-              <img
-                class="h-10 w-10 rounded-full"
-                src="https://api.dicebear.com/9.x/open-peeps/svg?seed=Aneka&clip=true&size=256&randomizeIds=false&accessories=glasses&face=smile&clothingColor=fdea6b&backgroundColor=e78276&head=bun"
-                alt="Author"
-              />
+              <AppLink
+                :to="{ name: 'authors-slug', params: { slug: author.name } }"
+              >
+                <img
+                  class="h-10 w-10 rounded-full"
+                  src="https://api.dicebear.com/9.x/open-peeps/svg?seed=Aneka&clip=true&size=256&randomizeIds=false&accessories=glasses&face=smile&clothingColor=fdea6b&backgroundColor=e78276&head=bun"
+                  alt="Author"
+                />
+              </AppLink>
             </div>
             <div class="ml-3">
               <p class="text-sm font-medium text-white">
-                <a href="#" class="hover:underline">Jane Doe</a>
+                <AppLink
+                  :to="{ name: 'authors-slug', params: { slug: author.name } }"
+                  class="hover:underline"
+                >
+                  {{ author.name }}
+                </AppLink>
               </p>
               <div class="flex space-x-1 text-sm text-gray-300">
                 <time datetime="2025-03-16">Mar 16, 2025</time>
@@ -68,45 +77,45 @@
           <nav class="mt-4">
             <ul class="space-y-2">
               <li>
-                <a
+                <AppLink
                   href="#introduction"
                   class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300"
-                  >Introduction</a
+                  >Introduction</AppLink
                 >
               </li>
               <li>
-                <a
+                <AppLink
                   href="#getting-started"
                   class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300"
-                  >Getting Started with Tailwind CSS</a
+                  >Getting Started with Tailwind CSS</AppLink
                 >
               </li>
               <li>
-                <a
+                <AppLink
                   href="#nuxt-integration"
                   class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300"
-                  >Integrating with Nuxt 3</a
+                  >Integrating with Nuxt 3</AppLink
                 >
               </li>
               <li>
-                <a
+                <AppLink
                   href="#responsive-design"
                   class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300"
-                  >Responsive Design Principles</a
+                  >Responsive Design Principles</AppLink
                 >
               </li>
               <li>
-                <a
+                <AppLink
                   href="#dark-mode"
                   class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300"
-                  >Implementing Dark Mode</a
+                  >Implementing Dark Mode</AppLink
                 >
               </li>
               <li>
-                <a
+                <AppLink
                   href="#conclusion"
                   class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300"
-                  >Conclusion</a
+                  >Conclusion</AppLink
                 >
               </li>
             </ul>
@@ -161,13 +170,13 @@
                   class="mt-2 text-sm text-primary-700 dark:text-primary-200"
                 >
                   <p>
-                    <a
-                      href="#"
+                    <AppLink
+                      :to="{name: 'posts-slug', params: {slug: '10-tailwind-css-tips-and-tricks-every-developer-should-know'}}"
                       class="font-medium text-primary-600 hover:text-primary-500 dark:text-primary-400 dark:hover:text-primary-300"
                     >
                       10 Tailwind CSS Tips and Tricks Every Developer Should
                       Know
-                    </a>
+                    </AppLink>
                   </p>
                 </div>
               </div>
@@ -295,36 +304,36 @@ npx tailwindcss init</code></pre>
             Tags&nbsp;:
           </h2>
           <div class="flex flex-wrap gap-2">
-            <a
-              href="#"
+            <AppLink
+              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               Tailwind CSS
-            </a>
-            <a
-              href="#"
+            </AppLink>
+            <AppLink
+              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               Nuxt 3
-            </a>
-            <a
-              href="#"
+            </AppLink>
+            <AppLink
+              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               TypeScript
-            </a>
-            <a
-              href="#"
+            </AppLink>
+            <AppLink
+              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               Web Development
-            </a>
-            <a
-              href="#"
+            </AppLink>
+            <AppLink
+              :to="{name: 'tags-slug', params: {slug: 'dev'}}"
               class="inline-flex items-center rounded-full bg-gray-100 px-3 py-0.5 text-sm font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               Frontend
-            </a>
+            </AppLink>
           </div>
         </div>
 
@@ -422,11 +431,11 @@ definePageMeta({
 
 // Author data
 const author = {
-  name: "Thomas Smith",
+  name: "Jane Doe",
   role: "Senior Frontend Developer",
-  bio: "Thomas has been building web applications for over 10 years, specializing in Vue.js, Nuxt, and modern CSS frameworks. He loves sharing knowledge and helping others improve their development skills.",
+  bio: "Jane has been building web applications for over 10 years, specializing in Vue.js, Nuxt, and modern CSS frameworks. She loves sharing knowledge and helping others improve their development skills.",
   avatarUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "https://api.dicebear.com/9.x/open-peeps/svg?seed=Aneka&clip=true&size=256&randomizeIds=false&accessories=glasses&face=smile&clothingColor=fdea6b&backgroundColor=e78276&head=bun",
   socialLinks: [
     {
       name: "Twitter",

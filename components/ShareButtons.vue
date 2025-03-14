@@ -4,7 +4,7 @@
       >Share:</span
     >
     <div class="flex space-x-2">
-      <a
+      <AppLink
         v-for="item in socialLinks"
         :key="item.name"
         :href="item.href"
@@ -14,7 +14,7 @@
       >
         <span class="sr-only">Share on {{ item.name }}</span>
         <component :is="item.icon" aria-hidden="true" size="1em" class="p-2" />
-      </a>
+      </AppLink>
     </div>
   </div>
 </template>

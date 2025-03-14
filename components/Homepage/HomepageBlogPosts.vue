@@ -12,35 +12,35 @@
         nouveau hub du développement.
       </div>
       <div class="mb-12 grid grid-cols-3 gap-6 md:grid-cols-6">
-        <a
-          href="/tags"
+        <AppLink
+          :to="{name: 'tags-slug', params: {slug: 'dev'}}"
           class="btn-with-gradient inline-block px-4 py-2 text-center text-wb"
-          >Tout</a
+          >Tout</AppLink
         >
-        <a
-          href="/tags"
+        <AppLink
+          :to="{name: 'tags-slug', params: {slug: 'dev'}}"
           class="btn-hover-gradient inline-block px-4 py-2 text-center"
-          >Web</a
+          >Web</AppLink
         >
-        <a
-          href="/tags"
+        <AppLink
+          :to="{name: 'tags-slug', params: {slug: 'dev'}}"
           class="btn-hover-gradient inline-block px-4 py-2 text-center"
-          >Mobile</a
+          >Mobile</AppLink
         >
-        <a
-          href="/tags"
+        <AppLink
+          :to="{name: 'tags-slug', params: {slug: 'dev'}}"
           class="btn-hover-gradient inline-block px-4 py-2 text-center"
-          >IA</a
+          >IA</AppLink
         >
-        <a
-          href="/tags"
+        <AppLink
+          :to="{name: 'tags-slug', params: {slug: 'dev'}}"
           class="btn-hover-gradient inline-block px-4 py-2 text-center"
-          >Interviews</a
+          >Interviews</AppLink
         >
-        <a
-          href="/tags"
+        <AppLink
+          :to="{name: 'tags-slug', params: {slug: 'dev'}}"
           class="btn-hover-gradient inline-block px-4 py-2 text-center"
-          >News</a
+          >News</AppLink
         >
       </div>
       <!-- Grid/List -->

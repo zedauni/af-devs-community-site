@@ -235,17 +235,19 @@
           <div class="ml-3">
             <label for="terms" class="text-sm text-gray-700 dark:text-gray-300">
               I agree to the
-              <a
+              <AppLink
                 href="#"
                 class="text-primary-600 hover:underline dark:text-primary-400"
-                >Terms of Service</a
               >
+                Terms of Service
+              </AppLink>
               and
-              <a
+              <AppLink
                 href="#"
                 class="text-primary-600 hover:underline dark:text-primary-400"
-                >Privacy Policy</a
               >
+                Privacy Policy
+              </AppLink>
             </label>
           </div>
         </div>

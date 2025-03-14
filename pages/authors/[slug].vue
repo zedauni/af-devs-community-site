@@ -18,27 +18,27 @@
             Senior Technical Writer & Software Developer
           </p>
           <div class="flex flex-wrap justify-center gap-4 md:justify-start">
-            <a
+            <AppLink
+              href="https://github.com/af-devs"
+              class="inline-flex items-center rounded-full bg-gray-800 px-4 py-2 text-white transition-colors hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600"
+            >
+              <Icon name="ri:github-fill" class="mr-2 h-5 w-5" />
+              <span>GitHub</span>
+            </AppLink>
+            <AppLink
               href="#"
               class="inline-flex items-center rounded-full bg-primary-700 px-4 py-2 text-white transition-colors hover:bg-primary-800"
             >
               <Icon name="ri:twitter-x-fill" class="mr-2 h-5 w-5" />
               <span>Follow</span>
-            </a>
-            <a
-              href="#"
-              class="inline-flex items-center rounded-full bg-gray-800 px-4 py-2 text-white transition-colors hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600"
-            >
-              <Icon name="ri:github-fill" class="mr-2 h-5 w-5" />
-              <span>GitHub</span>
-            </a>
-            <a
+            </AppLink>
+            <AppLink
               href="#"
               class="inline-flex items-center rounded-full bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
             >
               <Icon name="ri:linkedin-box-fill" class="mr-2 h-5 w-5" />
               <span>Connect</span>
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>

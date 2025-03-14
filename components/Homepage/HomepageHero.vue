@@ -17,16 +17,16 @@
           {{ dynamicHeadingText }}
         </h2>
         <p class="mb-8 leading-loose">
-          AF-DEV est la communauté de développeurs africains qui façonne
+          AF-DEV est la communauté de développeurs et créateurs tech africains qui façonne
           l'avenir technologique du continent. Ensemble, construisons des
-          solutions open-source innovantes et propulsons l'Afrique au cœur de la
+          solutions innovantes et propulsons l'Afrique au cœur de la
           révolution numérique.
         </p>
         <div class="text-center md:text-left">
-          <a
-            href="#"
+          <AppLink
+            :to="{ name: 'join' }"
             class="btn-ripple inline-block rounded-full px-6 py-3 font-bold text-gray-100 drop-shadow-2xl transition-colors duration-300"
-            >Rejoignez la révolution</a
+            >Rejoignez la révolution</AppLink
           >
         </div>
       </div>

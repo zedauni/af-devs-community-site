@@ -7,13 +7,13 @@
       class="aspect-h-4 aspect-w-3 sm:aspect-none overflow-hidden bg-gray-200 sm:h-48"
       :class="viewMode === 'list' ? 'w-48 flex-shrink-0' : ''"
     >
-      <a :href="article.href">
+      <AppLink :href="article.href">
         <img
           :src="article.imageUrl"
           :alt="article.title"
           class="h-full w-full object-cover object-center transition-transform duration-300 hover:scale-105 sm:h-full sm:w-full"
         />
-      </a>
+      </AppLink>
     </div>
     <div class="flex flex-1 flex-col space-y-3 p-4">
       <div class="flex items-center space-x-2">
@@ -27,10 +27,12 @@
           </TagLink>
         </span>
       </div>
-      <h3 class="text-sm font-medium text-gray-900 dark:text-white hover:font-semibold">
-        <a :href="article.href">
+      <h3
+        class="text-sm font-medium text-gray-900 hover:font-semibold dark:text-white"
+      >
+        <AppLink :href="article.href">
           {{ article.title }}
-        </a>
+        </AppLink>
       </h3>
       <p class="line-clamp-2 text-sm text-gray-500 dark:text-gray-400">
         {{ article.description }}

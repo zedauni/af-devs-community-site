@@ -25,7 +25,9 @@
             Des compétitions pour résoudre des problèmes avec le développement
             open-source.
           </p>
-          <a href="#" class="btn-hover-gradient px-9 py-4">En savoir plus</a>
+          <AppLink :to="{ name: 'join' }" class="btn-hover-gradient px-9 py-4"
+            >En savoir plus</AppLink
+          >
         </div>
         <div
           class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-500 hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
@@ -40,7 +42,9 @@
             Des rencontres entre développeurs africains pour échanger et
             collaborer.
           </p>
-          <a href="#" class="btn-hover-gradient px-9 py-4">En savoir plus</a>
+          <AppLink :to="{ name: 'join' }" class="btn-hover-gradient px-9 py-4"
+            >En savoir plus</AppLink
+          >
         </div>
         <div
           class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-500 hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
@@ -55,7 +59,9 @@
             Des tutoriels et formations en ligne pour accompagner les
             développeurs.
           </p>
-          <a href="#" class="btn-hover-gradient px-9 py-4">Démarrer</a>
+          <AppLink :to="{ name: 'join' }" class="btn-hover-gradient px-9 py-4"
+            >Démarrer</AppLink
+          >
         </div>
         <div
           class="rounded-lg border border-gray-100 bg-pale-gray p-6 text-center shadow-md transition-transform duration-500 hover:-translate-y-2 hover:border-gray-200 dark:border-gray-50/10 dark:bg-transparent dark:hover:border-gray-50/75"
@@ -72,7 +78,9 @@
             Participation à des projets open-source pour encourager
             l'innovation.
           </p>
-          <a href="#" class="btn-hover-gradient px-9 py-4">Participer</a>
+          <AppLink :to="{ name: 'join' }" class="btn-hover-gradient px-9 py-4"
+            >Participer</AppLink
+          >
         </div>
       </div>
     </div>

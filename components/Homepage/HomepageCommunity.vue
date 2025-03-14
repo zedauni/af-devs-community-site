@@ -77,16 +77,15 @@
           </li>
         </ul>
         <div class="flex justify-center md:justify-start">
-          <a
-            href="https://t.me/devs_forum"
-            target="_blank"
+          <AppLink
+            :to="{ name: 'join' }"
             class="btn-with-gradient inline-flex items-center rounded-full px-6 py-3 font-bold text-pale-gray drop-shadow-2xl transition-colors duration-300 hover:bg-primary-dark"
           >
             <div class="mx-auto flex items-center justify-center">
-              <Icon name="ri:telegram-line" class="mr-2 text-2xl" />
-              <span>Rejoindre sur Telegram</span>
+              <Icon name="ri:group-2-line" class="mr-2 text-2xl" />
+              <span>Rejoindre</span>
             </div>
-          </a>
+          </AppLink>
         </div>
       </div>
     </div>

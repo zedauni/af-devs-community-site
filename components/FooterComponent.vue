@@ -9,16 +9,14 @@
         class1="grid grid-cols-1 md:grid-cols-3 gap-8"
       >
         <div class="space-y-8 xl:col-span-1">
-          <a href="/" class="mb-4 text-2xl font-bold"
-            >AF-<span class="text-secondary"
-              >DEV</span
-            ></a
+          <AppLink href="/" class="mb-4 text-2xl font-bold"
+            >AF-<span class="text-secondary">DEV</span></AppLink
           >
           <p class="my-4 text-base text-gray-500 dark:text-gray-400">
             Construisons l'avenir tech de l'Afrique ensemble
           </p>
           <div class="flex space-x-4">
-            <a
+            <AppLink
               href="https://t.me/devs_forum"
               class="text-gray-600 transition-colors hover:text-custom-blue dark:text-gray-400 dark:hover:text-primary-400"
             >
@@ -27,25 +25,25 @@
                 size="1.3em"
                 class="cursor-pointer"
               />
-            </a>
-            <a
+            </AppLink>
+            <AppLink
               href="https://github.com/af-devs"
               class="text-gray-600 transition-colors hover:text-custom-blue dark:text-gray-400 dark:hover:text-primary-400"
             >
               <Icon name="ri:github-fill" size="1.3em" class="cursor-pointer" />
-            </a>
-            <a
+            </AppLink>
+            <AppLink
               href="#"
               class="text-gray-600 transition-colors hover:text-custom-blue dark:text-gray-400 dark:hover:text-primary-400"
             >
               <Icon name="ri:twitter-fill" size="1.3em" class="cursor-pointer"
-            /></a>
-            <a
+            /></AppLink>
+            <AppLink
               href="#"
               class="text-gray-600 transition-colors hover:text-custom-blue dark:text-gray-400 dark:hover:text-primary-400"
             >
               <Icon name="ri:linkedin-fill" size="1.3em" class="cursor-pointer"
-            /></a>
+            /></AppLink>
           </div>
         </div>
         <div class="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
@@ -56,31 +54,31 @@
               </h4>
               <ul class="space-y-2">
                 <li>
-                  <a
-                    href="#"
+                  <AppLink
+                    :to="{ name: 'home' }"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Accueil</a
+                    >Accueil</AppLink
                   >
                 </li>
                 <li>
-                  <a
+                  <AppLink
                     href="#activities"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Nos Activités</a
+                    >Nos Activités</AppLink
                   >
                 </li>
                 <li>
-                  <a
-                    href="#blog"
+                  <AppLink
+                    :to="{ name: 'posts' }"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Blog</a
+                    >Blog</AppLink
                   >
                 </li>
                 <li>
-                  <a
+                  <AppLink
                     href="#"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Catalogue</a
+                    >Catalogue</AppLink
                   >
                 </li>
               </ul>
@@ -91,38 +89,38 @@
               </h4>
               <ul class="space-y-2">
                 <li>
-                  <a
+                  <AppLink
                     href="#"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Question-Réponses</a
+                    >Question-Réponses</AppLink
                   >
                 </li>
                 <li>
-                  <a
+                  <AppLink
                     href="#"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Tutoriels</a
+                    >Tutoriels</AppLink
                   >
                 </li>
                 <li>
-                  <a
+                  <AppLink
                     href="#"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Outils</a
+                    >Outils</AppLink
                   >
                 </li>
                 <li>
-                  <a
+                  <AppLink
                     href="#"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Offres d'emploi</a
+                    >Offres d'emploi</AppLink
                   >
                 </li>
                 <li>
-                  <a
+                  <AppLink
                     href="#"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >FAQ</a
+                    >FAQ</AppLink
                   >
                 </li>
               </ul>
@@ -135,38 +133,38 @@
               </h4>
               <ul class="space-y-2">
                 <li>
-                  <a
+                  <AppLink
+                    :to="{ name: 'join' }"
+                    class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
+                    >À propos</AppLink
+                  >
+                </li>
+                <li>
+                  <AppLink
+                    :to="{ name: 'join' }"
+                    class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
+                    >Rejoindre</AppLink
+                  >
+                </li>
+                <li>
+                  <AppLink
                     href="#"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >À propos</a
+                    >Partenaires</AppLink
                   >
                 </li>
                 <li>
-                  <a
-                    href="#community"
+                  <AppLink
+                    href="https://t.me/devs_forum"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Rejoindre</a
+                    >Groupe Telegram</AppLink
                   >
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <AppLink
+                    :to="{ name: 'contact' }"
                     class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Partenaires</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Groupe Telegram</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    class="hover:text-dark-900 text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-white"
-                    >Contact</a
+                    >Contact</AppLink
                   >
                 </li>
               </ul>
@@ -192,20 +190,20 @@
         <div
           class="mt-4 flex flex-col items-center justify-between md:mt-0 md:flex-row"
         >
-          <a
+          <AppLink
+            :to="{ name: 'contact' }"
+            class="mr-4 text-gray-600 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
+            >Revendication</AppLink
+          >
+          <AppLink
             href="#"
             class="mr-4 text-gray-600 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
-            >Revendication</a
+            >Confidentialité</AppLink
           >
-          <a
-            href="#"
-            class="mr-4 text-gray-600 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
-            >Confidentialité</a
-          >
-          <a
+          <AppLink
             href="#"
             class="text-gray-600 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
-            >CGU</a
+            >CGU</AppLink
           >
         </div>
       </div>

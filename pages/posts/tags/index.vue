@@ -9,9 +9,9 @@
       </h1>
       <p class="text-lg text-gray-600 dark:text-gray-300">
         Explore all topics covered in our
-        <a :href="useBaseUrl('posts')" class="font-bold text-secondary"
-          >publications</a
-        >
+        <AppLink :to="{ name: 'posts' }" class="font-bold text-secondary">
+          publications
+        </AppLink>
       </p>
     </div>
 
@@ -37,6 +37,8 @@
 </template>
 
 <script setup lang="ts">
+import { AppLink } from "#components";
+
 // Define route name and set route path
 definePageMeta({
   name: "tags",

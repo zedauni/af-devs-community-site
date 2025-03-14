@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto px-4 sm:px-6 md:w-9/12">
+  <main class="container mx-auto px-4 py-12 sm:px-6 md:w-9/12">
     <!-- Tag Header -->
     <div class="mb-8 text-center">
       <h1
