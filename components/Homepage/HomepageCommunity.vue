@@ -1,21 +1,21 @@
 <template>
   <!-- Community Section -->
-  <section id="community" class="bg-gray-50 dark:bg-gray-800 py-14">
+  <section id="community" class="bg-gray-50 py-14 dark:bg-gray-800">
     <div
-      class="container md:w-9/12 mx-auto space-x-14 px-4 flex flex-col md:flex-row items-center"
+      class="container mx-auto flex flex-col items-center space-x-14 px-4 md:w-9/12 md:flex-row"
       v-animate-on-scroll
     >
-      <div class="md:w-1/2 mb-8 md:mb-0 home-img">
+      <div class="home-img mb-8 md:mb-0 md:w-1/2">
         <img
           src="~/assets/img/community.svg"
           alt="Communauté AF-DEV"
-          class="w-full max-w-md mx-auto"
+          class="mx-auto w-full max-w-md"
         />
       </div>
       <div class="md:w-1/2">
         <div class="">
           <h2
-            class="text-3xl md:text-4xl font-bold mb-8 text-gradient-p-to-s underline-hover-effect"
+            class="underline-hover-effect mb-8 text-3xl font-bold text-secondary md:text-4xl"
           >
             Rejoindre la Communauté
           </h2>
@@ -25,58 +25,68 @@
           booster votre carrière de développeur :
         </p>
         <ul class="mb-8 space-y-4">
-          <li class="flex items-center transition-transform hover:translate-x-2 duration-100">
+          <li
+            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+          >
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="mr-2 text-custom-blue"
             />
             Accès à des ressources exclusives et tutoriels
           </li>
-          <li class="flex items-center transition-transform hover:translate-x-2 duration-100">
+          <li
+            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+          >
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="mr-2 text-custom-blue"
             />
             Réseautage avec des développeurs talentueux à travers l'Afrique
           </li>
-          <li class="flex items-center transition-transform hover:translate-x-2 duration-100">
+          <li
+            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+          >
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="mr-2 text-custom-blue"
             />
             Participation à des projets open-source innovants
           </li>
-          <li class="flex items-center transition-transform hover:translate-x-2 duration-100">
+          <li
+            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+          >
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="mr-2 text-custom-blue"
             />
             Invitations à des événements et hackathons
           </li>
-          <li class="flex items-center transition-transform hover:translate-x-2 duration-100">
+          <li
+            class="flex items-center transition-transform duration-100 hover:translate-x-2"
+          >
             <Icon
               name="ri:arrow-right-double-fill"
               size="1.5em"
-              class="text-secondary mr-2"
+              class="mr-2 text-custom-blue"
             />
             Opportunités de collaboration et de mentorat
           </li>
         </ul>
         <div class="flex justify-center md:justify-start">
-        <a
-          href="https://t.me/devs_forum"
-          target="_blank"
-          class="hover:bg-primary-dark btn-with-gradient text-pale-gray font-bold py-3 px-6 rounded-full transition-colors duration-300 inline-flex items-center drop-shadow-2xl"
-        >
-          <div class="flex items-center justify-center mx-auto">
-            <Icon name="ri:telegram-line" class="mr-2 text-2xl" />
-            <span>Rejoindre sur Telegram</span>
-          </div>
-        </a></div>
+          <AppLink
+            :to="{ name: 'join' }"
+            class="btn-with-gradient inline-flex items-center rounded-full px-6 py-3 font-bold text-pale-gray drop-shadow-2xl transition-colors duration-300 hover:bg-primary-dark"
+          >
+            <div class="mx-auto flex items-center justify-center">
+              <Icon name="ri:group-2-line" class="mr-2 text-2xl" />
+              <span>Rejoindre</span>
+            </div>
+          </AppLink>
+        </div>
       </div>
     </div>
   </section>
