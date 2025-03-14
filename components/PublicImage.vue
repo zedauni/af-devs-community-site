@@ -1,5 +1,5 @@
 <template>
-  <img :src="fullUrl" :alt="alt" v-bind="$attrs" />
+  <img :src="fullUrl" :alt="alt || ''" v-bind="$attrs" />
 </template>
 
 <script setup lang="ts">
