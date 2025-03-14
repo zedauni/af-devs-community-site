@@ -14,7 +14,7 @@
         ></div>
       </div>
       <div
-        class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8"
+        class="relative container mx-auto px-4 py-24 sm:px-6 sm:py-32 md:w-9/12"
       >
         <div class="max-w-3xl">
           <div class="mb-4 flex flex-wrap gap-2">
@@ -58,7 +58,7 @@
     </div>
 
     <!-- Article Content -->
-    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 md:w-9/12">
       <div class="mx-auto max-w-3xl">
         <!-- Table of Contents -->
         <div
@@ -375,7 +375,7 @@ npx tailwindcss init</code></pre>
     </div>
 
     <!-- Comments Section -->
-    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative container mx-auto px-4 sm:px-6 md:w-9/12">
       <div class="mx-auto max-w-3xl">
         <CommentSection />
       </div>
@@ -383,7 +383,7 @@ npx tailwindcss init</code></pre>
 
     <!-- Related Articles -->
     <div class="py-16 sm:py-24">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto px-4 sm:px-6 md:w-9/12">
         <div class="mx-auto max-w-2xl text-center">
           <h2
             class="text-3xl font-bold tracking-tight text-secondary sm:text-4xl"
@@ -448,6 +448,6 @@ const author = {
 
 // Related articles data
 // Get articles from dedicated pinia store
-const articleStore = useArticleStore()
+const articleStore = useArticleStore();
 const relatedArticles = ref<Article[]>(articleStore.getLatestArticles(4));
 </script>

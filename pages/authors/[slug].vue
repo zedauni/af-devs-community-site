@@ -1,6 +1,6 @@
 <template>
-  <main class="container mx-auto px-4 pt-24 pb-12">
-    <article class="mx-auto max-w-4xl">
+  <main class="container mx-auto px-4 pt-24 pb-12 sm:px-6 md:w-9/12">
+    <article>
       <!-- Author Header -->
       <div class="mb-12 flex flex-col items-center gap-8 md:flex-row">
         <img
@@ -215,14 +215,16 @@
       </section>
 
       <!-- Newsletter Signup -->
-      <div class="flex flex-col md:flex-row md:gap-x-4 mt-8 rounded-lg bg-primary-50 p-6 dark:bg-primary-900/40">
+      <div
+        class="mt-8 flex flex-col rounded-lg bg-primary-50 p-6 md:flex-row md:gap-x-4 dark:bg-primary-900/40"
+      >
         <div class="">
           <h2 class="text-xl font-bold tracking-tight">
             Subscribe to our newsletter
           </h2>
           <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            Get the latest articles, tutorials, and updates delivered straight to
-            your inbox.
+            Get the latest articles, tutorials, and updates delivered straight
+            to your inbox.
           </p>
         </div>
         <form class="mt-4 sm:flex sm:max-w-md sm:items-center">
@@ -248,7 +250,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Article } from '~/schema/article';
+import type { Article } from "~/schema/article";
 
 // Define route name
 definePageMeta({
@@ -256,7 +258,7 @@ definePageMeta({
 });
 
 // Get latest articles just for prototyping
-const articleStore = useArticleStore()
+const articleStore = useArticleStore();
 const articles = ref<Article[]>(articleStore.getLatestArticles(4));
 
 type ViewType = "grid" | "list";

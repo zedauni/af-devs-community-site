@@ -16,10 +16,10 @@
 useHeadSafe({
   bodyAttrs: {
     class: [
-      "bg-background-light",
-      "dark:bg-background-dark",
-      "text-text-light",
-      "dark:text-text-dark",
+      "bg-main-bg-light",
+      "dark:bg-main-bg-dark",
+      "text-light",
+      "dark:text-dark",
       "transition-colors",
       "duration-300",
     ],

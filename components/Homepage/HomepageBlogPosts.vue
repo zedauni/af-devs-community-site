@@ -3,7 +3,7 @@
   <section id="blog">
     <div class="container mx-auto px-4 md:w-9/12" v-animate-on-scroll>
       <h2
-        class="-text-gradient-p-to-s mb-6 text-center text-3xl font-bold text-secondary md:text-4xl"
+        class="mb-6 text-center text-3xl font-bold text-secondary md:text-4xl"
       >
         Blog & Actualités
       </h2>
@@ -14,32 +14,32 @@
       <div class="mb-12 grid grid-cols-3 gap-6 md:grid-cols-6">
         <a
           href="/tags"
-          class="w-text-wb btn-with-gradient inline-block px-4 py-2 text-center text-wb"
+          class="btn-with-gradient inline-block px-4 py-2 text-center text-wb"
           >Tout</a
         >
         <a
           href="/tags"
-          class="w-text-wb btn-hover-gradient inline-block px-4 py-2 text-center text-bw"
+          class="btn-hover-gradient inline-block px-4 py-2 text-center"
           >Web</a
         >
         <a
           href="/tags"
-          class="w-text-wb btn-hover-gradient inline-block px-4 py-2 text-center text-bw"
+          class="btn-hover-gradient inline-block px-4 py-2 text-center"
           >Mobile</a
         >
         <a
           href="/tags"
-          class="w-text-wb btn-hover-gradient inline-block px-4 py-2 text-center text-bw"
+          class="btn-hover-gradient inline-block px-4 py-2 text-center"
           >IA</a
         >
         <a
           href="/tags"
-          class="w-text-wb btn-hover-gradient inline-block px-4 py-2 text-center text-bw"
+          class="btn-hover-gradient inline-block px-4 py-2 text-center"
           >Interviews</a
         >
         <a
           href="/tags"
-          class="w-text-wb btn-hover-gradient inline-block px-4 py-2 text-center text-bw"
+          class="btn-hover-gradient inline-block px-4 py-2 text-center"
           >News</a
         >
       </div>

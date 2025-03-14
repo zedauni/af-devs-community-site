@@ -1,39 +1,37 @@
 <template>
-  <main class="container mx-auto px-4 py-12">
-    <div class="mx-auto max-w-4xl">
-      <!-- Tag Header -->
-      <div class="mb-8 text-center">
-        <h1
-          class="text-gradient-p-to-s mb-4 text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl dark:text-white"
-        >
-          Tags
-        </h1>
-        <p class="text-lg text-gray-600 dark:text-gray-300">
-          Explore all topics covered in our
-          <a :href="useBaseUrl('posts')" class="font-bold text-secondary"
-            >publications</a
-          >
-        </p>
-      </div>
-
-      <!-- Tags cloud -->
-      <div
-        v-if="sortedTags.length > 0"
-        class="mt-12 tag-cloud flex flex-wrap items-center justify-center py-6"
+  <main class="container mx-auto px-4 py-12 sm:px-6 md:w-9/12">
+    <!-- Tag Header -->
+    <div class="mb-8 text-center">
+      <h1
+        class="text-decoration-primary mb-4 text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl dark:text-white"
       >
-        <TagLink
-          v-for="tag in sortedTags"
-          :key="tag.title"
-          :tag="tag"
-          :class="[
-            'm-2 cursor-pointer rounded-full px-3 py-1 shadow-xs shadow-gray-400/50 dark:shadow-gray-50/25 scale-105 transition-transform duration-300 ease-in-out',
-            getTagClass(tag.frequency),
-          ]"
+        Tags
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+        Explore all topics covered in our
+        <a :href="useBaseUrl('posts')" class="font-bold text-secondary"
+          >publications</a
         >
-          {{ tag.title }}
-          <span class="ml-1 text-xs">({{ tag.frequency }})</span>
-        </TagLink>
-      </div>
+      </p>
+    </div>
+
+    <!-- Tags cloud -->
+    <div
+      v-if="sortedTags.length > 0"
+      class="tag-cloud mt-12 flex flex-wrap items-center justify-center py-6"
+    >
+      <TagLink
+        v-for="tag in sortedTags"
+        :key="tag.title"
+        :tag="tag"
+        :class="[
+          'm-2 scale-105 cursor-pointer rounded-full px-3 py-1 shadow-xs shadow-gray-400/50 transition-transform duration-300 ease-in-out dark:shadow-gray-50/25',
+          getTagClass(tag.frequency),
+        ]"
+      >
+        {{ tag.title }}
+        <span class="ml-1 text-xs">({{ tag.frequency }})</span>
+      </TagLink>
     </div>
   </main>
 </template>

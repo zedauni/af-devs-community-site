@@ -10,42 +10,50 @@
       >
         <div class="space-y-8 xl:col-span-1">
           <a href="/" class="mb-4 text-2xl font-bold"
-            >AF-<span class="-text-custom-blue-dark text-secondary">DEV</span></a
+            >AF-<span class="text-secondary"
+              >DEV</span
+            ></a
           >
           <p class="my-4 text-base text-gray-500 dark:text-gray-400">
             Construisons l'avenir tech de l'Afrique ensemble
           </p>
           <div class="flex space-x-4">
             <a
-              href="#"
-              class="text-gray-600 hover:text-custom-blue dark:text-gray-400"
+              href="https://t.me/devs_forum"
+              class="text-gray-600 transition-colors hover:text-custom-blue dark:text-gray-400 dark:hover:text-primary-400"
+            >
+              <Icon
+                name="ri:telegram-fill"
+                size="1.3em"
+                class="cursor-pointer"
+              />
+            </a>
+            <a
+              href="https://github.com/af-devs"
+              class="text-gray-600 transition-colors hover:text-custom-blue dark:text-gray-400 dark:hover:text-primary-400"
             >
               <Icon name="ri:github-fill" size="1.3em" class="cursor-pointer" />
             </a>
             <a
               href="#"
-              class="text-gray-600 hover:text-custom-blue dark:text-gray-400"
+              class="text-gray-600 transition-colors hover:text-custom-blue dark:text-gray-400 dark:hover:text-primary-400"
             >
               <Icon name="ri:twitter-fill" size="1.3em" class="cursor-pointer"
             /></a>
             <a
               href="#"
-              class="text-gray-600 hover:text-custom-blue dark:text-gray-400"
+              class="text-gray-600 transition-colors hover:text-custom-blue dark:text-gray-400 dark:hover:text-primary-400"
             >
               <Icon name="ri:linkedin-fill" size="1.3em" class="cursor-pointer"
-            /></a>
-            <a
-              href="#"
-              class="text-gray-600 hover:text-custom-blue dark:text-gray-400"
-            >
-              <Icon name="ri:youtube-fill" size="1.3em" class="cursor-pointer"
             /></a>
           </div>
         </div>
         <div class="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
           <div class="md:grid md:grid-cols-2 md:gap-8">
             <div class="">
-              <h4 class="mb-4 text-lg font-semibold text-secondary">Explorer</h4>
+              <h4 class="mb-4 text-lg font-semibold text-secondary">
+                Explorer
+              </h4>
               <ul class="space-y-2">
                 <li>
                   <a
@@ -78,7 +86,9 @@
               </ul>
             </div>
             <div class="mt-12 md:mt-0">
-              <h4 class="mb-4 text-lg font-semibold text-secondary">Ressources</h4>
+              <h4 class="mb-4 text-lg font-semibold text-secondary">
+                Ressources
+              </h4>
               <ul class="space-y-2">
                 <li>
                   <a
@@ -120,7 +130,9 @@
           </div>
           <div class="md:grid md:grid-cols-2 md:gap-8">
             <div class="">
-              <h4 class="mb-4 text-lg font-semibold text-secondary">L'organisation</h4>
+              <h4 class="mb-4 text-lg font-semibold text-secondary">
+                L'organisation
+              </h4>
               <ul class="space-y-2">
                 <li>
                   <a
@@ -161,7 +173,11 @@
             </div>
             <div class="mt-12 md:mt-0">
               <div class="w-full">
-                <img src="https://placehold.co/250x250/e84d4d/white?text=Ads&grayscale&font=playfair-display" alt="Ads in footer" class="inset-0" />
+                <img
+                  src="https://placehold.co/250x250/e84d4d/white?text=Ads&grayscale&font=playfair-display"
+                  alt="Ads in footer"
+                  class="inset-0"
+                />
               </div>
             </div>
           </div>
@@ -178,15 +194,17 @@
         >
           <a
             href="#"
-            class="mr-4 text-gray-600 dark:text-gray-400 transition-colors hover:text-gray-700 dark:hover:text-white"
+            class="mr-4 text-gray-600 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
             >Revendication</a
           >
           <a
             href="#"
-            class="mr-4 text-gray-600 dark:text-gray-400 transition-colors hover:text-gray-700 dark:hover:text-white"
+            class="mr-4 text-gray-600 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
             >Confidentialité</a
           >
-          <a href="#" class="text-gray-600 dark:text-gray-400 transition-colors hover:text-gray-700 dark:hover:text-white"
+          <a
+            href="#"
+            class="text-gray-600 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
             >CGU</a
           >
         </div>

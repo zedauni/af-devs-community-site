@@ -2,21 +2,21 @@
   <!-- Home Section -->
   <section id="home">
     <div
-      class="container md:w-9/12 mx-auto px-4 flex flex-col-reverse md:flex-row items-center"
+      class="container mx-auto flex flex-col-reverse items-center px-4 md:w-9/12 md:flex-row"
       v-animate-on-scroll="{
         hidden: 'opacity-0 translate-y-0',
         visible: 'opacity-100 translate-y-10',
         transition: 'transition-all duration-1000 ease-out',
       }"
     >
-      <div class="md:w-1/2 mb-8 md:mb-0">
+      <div class="mb-8 md:mb-0 md:w-1/2">
         <h2
           id="dynamic-heading"
-          class="text-3xl md:text-4xl pt-4 leading-tight font-bold mb-2 bg-gradient-to-r from-custom-blue-dark to-custom-blue-light dark:to-white bg-clip-text text-transparent transition-opacity duration-500 min-h-[5rem] line-clamp-4"
+          class="mb-2 line-clamp-4 min-h-[5rem] bg-gradient-to-r from-custom-blue-dark to-custom-blue-light bg-clip-text pt-4 text-3xl leading-tight font-bold text-transparent transition-opacity duration-500 md:text-4xl dark:to-white"
         >
           {{ dynamicHeadingText }}
         </h2>
-        <p class="leading-loose mb-8">
+        <p class="mb-8 leading-loose">
           AF-DEV est la communauté de développeurs africains qui façonne
           l'avenir technologique du continent. Ensemble, construisons des
           solutions open-source innovantes et propulsons l'Afrique au cœur de la
@@ -25,16 +25,16 @@
         <div class="text-center md:text-left">
           <a
             href="#"
-            class="inline-block btn-ripple text-gray-100 font-bold py-3 px-6 rounded-full transition-colors duration-300 drop-shadow-2xl"
+            class="btn-ripple inline-block rounded-full px-6 py-3 font-bold text-gray-100 drop-shadow-2xl transition-colors duration-300"
             >Rejoignez la révolution</a
           >
         </div>
       </div>
-      <div class="md:w-1/2 home-img">
+      <div class="home-img md:w-1/2">
         <img
           src="~/assets/img/home.svg"
           alt="Illustration AF-DEV"
-          class="w-full max-w-md mx-auto"
+          class="mx-auto w-full max-w-md"
         />
       </div>
     </div>
