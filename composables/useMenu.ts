@@ -12,20 +12,47 @@ export function useMenu() {
 
   // Create navigation items with named routes or external URLs
   const navigationItems = computed<MenuItem[]>(() => [
+    // {
+    //   name: "Accueil",
+    //   routeName: "home",
+    //   current: route.name === "home",
+    // },
     {
-      name: "Accueil",
-      routeName: "home",
-      current: route.name === "home",
-    },
-    {
-      name: "Nos activités",
-      routeName: "home",
-      current: route.name === "home",
+      name: "Catalogue",
+      externalUrl: "#",
+      current: false,
+      submenu: [
+        {
+          name: "Catalogue",
+          externalUrl: "#",
+          current: false,
+        },
+        {
+          name: "SAAS",
+          externalUrl: "#",
+          current: false,
+        },
+        {
+          name: "Librairies",
+          externalUrl: "#",
+          current: false,
+        },
+        {
+          name: "Projets",
+          externalUrl: "#",
+          current: false,
+        },
+        {
+          name: "Ressources",
+          externalUrl: "#",
+          current: false,
+        },
+      ],
     },
     {
       name: "Publications",
       routeName: "posts",
-      current: isRouteNameActive("posts"),
+      current: isRouteNameActive("posts") || isRouteNameActive("tags"),
       submenu: [
         {
           name: "Publications",
@@ -41,18 +68,18 @@ export function useMenu() {
     },
     {
       name: "Rejoindre",
-      routeName: "home",
-      current: route.name === "home",
+      routeName: "join",
+      current: route.name === "join",
     },
     {
       name: "Contact",
-      routeName: "home",
-      current: route.name === "home",
+      routeName: "contact",
+      current: route.name === "contact",
       submenu: [
         {
           name: "Contact",
-          routeName: "home",
-          current: route.name === "home",
+          routeName: "contact",
+          current: route.name === "contact",
         },
         {
           name: "Telegram",
