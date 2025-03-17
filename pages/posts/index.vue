@@ -1,17 +1,20 @@
 <template>
   <main
-    class="relative container mx-auto px-4 py-12 transition-colors duration-[var(--transition-duration)]sm:px-6 md:w-9/12"
+    class="duration-[var(--transition-duration)]sm:px-6 relative container mx-auto px-4 py-12 transition-colors md:w-9/12"
   >
     <!-- Hero Section -->
     <div
-      class="relative mb-16 text-center before:absolute before:inset-0 before:z-0 before:bg-[url('~/assets/img/bg-pattern-dark.svg')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-10 dark:before:bg-[url('~/assets/img/bg-pattern-light.svg')]"
+      class="relative mb-16 text-center before:absolute before:inset-0 before:z-0 before:bg-[url('/images/bg-pattern-dark.svg')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-10 dark:before:bg-[url('/images/bg-pattern-light.svg')]"
     >
       <h1
         class="text-decoration-primary text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl"
       >
         Blog & Actualités
       </h1>
-      <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+      <p
+        class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
+        v-animate-on-scroll
+      >
         Explorez notre catalogue d'actualités et d'articles propulsés par la
         communauté.
       </p>
@@ -23,10 +26,11 @@
         <!-- Ads -->
         <div class="relative mb-6 flex justify-center sm:hidden">
           <!-- Placeholder image for vertical Ads -->
-          <img
+          <NuxtImg
             src="https://placehold.co/320x100/orange/white?text=Ads&grayscale&font=playfair-display"
             alt="Ad"
             class="inset-0"
+            placeholder="/images/placeholder.svg"
           />
         </div>
         <div class="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
@@ -64,9 +68,12 @@
                 :key="tag.title"
                 class="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary-700 dark:bg-primary-800 dark:text-primary-300"
               >
-                <TagLink :tag="tag" class="ml-1">
+                <AppLink
+                  :to="{ name: 'tags-slug', params: { slug: tag.title } }"
+                  class="ml-1"
+                >
                   {{ tag.title }}
-                </TagLink>
+                </AppLink>
               </label>
             </div>
           </div>
@@ -75,23 +82,25 @@
           class="mt-4 hidden rounded-lg bg-white p-6 shadow-lg sm:block dark:bg-gray-800"
         >
           <!-- Sponsorship -->
-          <div class="relative">
+          <div class="relative" v-animate-on-scroll>
             <!-- Placeholder image for Ads -->
-            <img
+            <NuxtImg
               src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d"
               alt="PUB"
               class="inset-0"
+              placeholder="/images/placeholder.svg"
             />
           </div>
         </div>
         <div class="mt-4 rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
           <!-- Ads -->
-          <div class="relative hidden sm:block">
+          <div class="relative hidden sm:block" v-animate-on-scroll>
             <!-- Placeholder image for vertical Ads -->
-            <img
+            <NuxtImg
               src="https://placehold.co/320x480/orange/white?text=Ads&grayscale&font=playfair-display"
               alt="Ad"
-              class="inset-0"
+              class="inset-0 mx-auto"
+              placeholder="/images/placeholder.svg"
             />
           </div>
         </div>
@@ -101,18 +110,20 @@
       <div class="flex-1">
         <!-- Large Leaderboard Ad -->
         <div
-          class="mb-6 flex items-center justify-between rounded-lg border border-gray-200 bg-main-bg shadow-sm dark:border-gray-800 dark:bg-gray-800"
+          class="mb-6 flex items-center justify-center rounded-lg border border-gray-200 bg-back-main shadow-sm dark:border-gray-800 dark:bg-gray-800" v-animate-on-scroll
         >
           <!-- Placeholder image for Ads -->
-          <img
+          <NuxtImg
             src="https://placehold.co/970x90/transparent/gray?text=Space+reserved+for+Sponsorship+%2B+Ads&grayscale&font=poppins"
             alt="PUB"
             class="inset-0 hidden sm:inline"
+            placeholder
           />
-          <img
+          <NuxtImg
             src="https://placehold.co/320x100/transparent/gray?text=Space+reserved+for+Sponsorship+%2B+Ads&grayscale&font=poppins"
             alt="PUB"
             class="inset-0 sm:hidden"
+            placeholder
           />
         </div>
 

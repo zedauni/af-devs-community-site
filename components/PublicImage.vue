@@ -1,5 +1,5 @@
 <template>
-  <img :src="fullUrl" :alt="alt || ''" v-bind="$attrs" />
+  <NuxtImg :src="fullUrl" :alt="alt || ''" v-bind="$attrs" placeholder />
 </template>
 
 <script setup lang="ts">

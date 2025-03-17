@@ -2,12 +2,15 @@
   <div
     class="flex flex-col items-center rounded-lg bg-gray-50 p-6 sm:flex-row sm:items-start dark:bg-gray-800"
   >
-    <AppLink :to="{ name: 'authors-slug', params: { slug: author.name } }"
-        class="inline-block h-32 w-32 sm:mr-6">
-      <img
+    <AppLink
+      :to="{ name: 'authors-slug', params: { slug: author.name } }"
+      class="inline-block h-32 w-32 sm:mr-6"
+    >
+      <NuxtImg
         class="rounded-full object-contain"
         :src="author.avatarUrl"
         :alt="author.name"
+        placeholder="/images/placeholder.svg"
       />
     </AppLink>
     <div>

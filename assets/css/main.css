@@ -36,14 +36,14 @@
   --color-warning-dark: oklch(54.52% 0.133 55.32);
   --color-warning: var(--color-warning-light);
 
-  --color-wb-light: oklch(100% 0 none);
-  --color-wb-dark: oklch(0% 0 none);
-  --color-wb: var(--color-wb-light);
-  --color-wb-invert: var(--color-wb-dark);
+  --color-bw-light: oklch(100% 0 none);
+  --color-bw-dark: oklch(0% 0 none);
+  --color-bw: var(--color-bw-light);
+  --color-bw-invert: var(--color-bw-dark);
 
-  --color-main-bg-light: oklch(98.51% 0 none);
-  --color-main-bg-dark: oklch(21.01% 0.0318 264.7);
-  --color-main-bg: var(--color-main-bg-light);
+  --color-back-main-light: oklch(98.51% 0 none);
+  --color-back-main-dark: oklch(21.01% 0.0318 264.7);
+  --color-back-main: var(--color-back-main-light);
 
   --color-light: oklch(27.81% 0.0296 256.8);
   --color-dark: oklch(93.16% 0.021 271.2);
@@ -139,14 +139,14 @@
   /* dark mode based on .dark class name (eg. <html class="dark">) */
   /* This method is the best since we can manage the dark mode in the useThemeMode composable, store user preference in cookie, and switch between modes without directly relying on browser preferences. So user can choose to bypass the browser dark mode preference or restore it when they want */
   .dark {
-    --color-wb: var(--color-wb-dark);
-    --color-wb-invert: var(--color-wb-light);
+    --color-bw: var(--color-bw-dark);
+    --color-bw-invert: var(--color-bw-light);
     --color-text: var(--color-dark);
     --color-border: var(--color-border-dark);
     --color-border: var(--color-border-dark);
     --color-custom-blue: var(--color-custom-blue-light);
     --color-custom-blue-invert: var(--color-custom-blue-dark);
-    --color-main-bg: var(--color-main-bg-dark);
+    --color-back-main: var(--color-back-main-dark);
 
     --color-primary-100: var(--color-primary-dark-100);
     --color-primary-200: var(--color-primary-dark-200);

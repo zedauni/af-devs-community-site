@@ -64,7 +64,7 @@
                 <!-- Submenu -->
                 <ul
                   v-if="item.submenu"
-                  class="ring-opacity-5 absolute left-0 z-10 mt-1 w-48 origin-top-left rounded-md bg-main-bg py-1 ring-1 shadow-lg ring-secondary-200 focus:outline-none"
+                  class="ring-opacity-5 absolute left-0 z-10 mt-1 w-48 origin-top-left rounded-md bg-back-main py-1 ring-1 shadow-lg ring-secondary-200 focus:outline-none"
                   :class="{ hidden: openedSubmenu !== item.name }"
                   role="menu"
                   aria-orientation="vertical"

@@ -9,6 +9,7 @@
       </h1>
       <p
         class="mx-auto mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
+        v-animate-on-scroll
       >
         Have a question or want to collaborate? We'd love to hear from you.
       </p>
@@ -82,7 +83,10 @@
                 <p class="mt-1 text-gray-600 dark:text-gray-300">
                   contact@domain.com
                 </p>
-                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                <p
+                  class="mt-1 text-sm text-gray-500 dark:text-gray-400"
+                  v-animate-on-scroll
+                >
                   We'll respond within 24-72 hours
                 </p>
               </div>
@@ -125,10 +129,11 @@
         <div
           class="rounded-xl border border-gray-200 bg-white/80 p-6 text-center shadow-lg dark:border-gray-700 dark:bg-gray-800"
         >
-          <img
+          <NuxtImg
             class="mx-auto mb-4 flex h-28 w-28 self-center rounded-full"
-            src="~/assets/img/tg-avatar.jpg"
+            src="/images/tg-avatar.jpg"
             alt="Telegram group profil image"
+            placeholder="/images/placeholder.svg"
           />
           <h3 class="mb-2 text-xl font-bold text-gray-700 dark:text-gray-300">
             Les developpeurs
@@ -185,7 +190,7 @@
             />
           </div>
 
-          <div>
+          <div v-animate-on-scroll>
             <label
               for="email"
               class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -201,7 +206,7 @@
             />
           </div>
 
-          <div>
+          <div v-animate-on-scroll>
             <label
               for="subject"
               class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -217,7 +222,7 @@
             />
           </div>
 
-          <div>
+          <div v-animate-on-scroll>
             <label
               for="message"
               class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -233,7 +238,7 @@
             ></textarea>
           </div>
 
-          <div>
+          <div v-animate-on-scroll>
             <button
               type="submit"
               class="flex w-full items-center justify-center rounded-lg bg-primary-500 px-6 py-3 text-white transition-colors duration-[var(--transition-duration-x2)] hover:shadow hover:shadow-gray-500 dark:bg-primary-800/50"
@@ -255,7 +260,7 @@
         <div class="mt-8 border-t border-gray-300 pt-8 dark:border-gray-700">
           <h3 class="mb-4 text-lg font-medium">Frequently Asked Questions</h3>
           <div class="space-y-4">
-            <details class="group">
+            <details class="group" v-animate-on-scroll>
               <summary class="flex cursor-pointer items-center justify-between">
                 <span class="text-gray-700 dark:text-gray-300"
                   >How quickly do you respond to messages?</span
@@ -270,7 +275,7 @@
                 business days.
               </p>
             </details>
-            <details class="group">
+            <details class="group" v-animate-on-scroll>
               <summary class="flex cursor-pointer items-center justify-between">
                 <span class="text-gray-700 dark:text-gray-300"
                   >Do you offer technical support?</span

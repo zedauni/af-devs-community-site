@@ -9,6 +9,7 @@
       </h1>
       <p
         class="mx-auto mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
+        v-animate-on-scroll
       >
         Connect with fellow creators, share knowledge, and grow together in our
         vibrant community of tech enthusiasts and web actors.
@@ -30,7 +31,7 @@
           />
         </div>
         <h3 class="mb-2 text-xl font-semibold">Network with Experts</h3>
-        <p class="text-gray-600 dark:text-gray-300">
+        <p class="text-gray-600 dark:text-gray-300" v-animate-on-scroll>
           Connect with experienced creators, developers and industry
           professionals from africa and around the world.
         </p>
@@ -48,7 +49,7 @@
           />
         </div>
         <h3 class="mb-2 text-xl font-semibold">Exclusive Content</h3>
-        <p class="text-gray-600 dark:text-gray-300">
+        <p class="text-gray-600 dark:text-gray-300" v-animate-on-scroll>
           Access premium articles, tutorials, and resources available only to
           community members.
         </p>
@@ -66,7 +67,7 @@
           />
         </div>
         <h3 class="mb-2 text-xl font-semibold">Discussion Forums</h3>
-        <p class="text-gray-600 dark:text-gray-300">
+        <p class="text-gray-600 dark:text-gray-300" v-animate-on-scroll>
           Participate in discussions, ask questions, and share your knowledge
           with the community.
         </p>
@@ -156,7 +157,7 @@
           </div>
         </div>
 
-        <div>
+        <div v-animate-on-scroll>
           <label
             for="email"
             class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -172,7 +173,7 @@
           />
         </div>
 
-        <div>
+        <div v-animate-on-scroll>
           <label
             for="expertise"
             class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -206,7 +207,7 @@
           </p>
         </div>
 
-        <div>
+        <div v-animate-on-scroll>
           <label
             for="bio"
             class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -222,7 +223,7 @@
           ></textarea>
         </div>
 
-        <div class="flex items-start">
+        <div class="flex items-start" v-animate-on-scroll>
           <div class="flex h-5 items-center">
             <input
               id="terms"
@@ -277,10 +278,11 @@
       <div class="grid gap-8 md:grid-cols-2">
         <div class="rounded-lg p-6 shadow-lg">
           <div class="mb-4 flex items-center">
-            <img
+            <NuxtImg
               src="https://api.dicebear.com/9.x/open-peeps/svg?seed=Aneka&clip=true&size=256&randomizeIds=false&accessories=glasses&backgroundColor=2d2a2e&face=smile&head=bangs"
               alt="John's avatar"
               class="h-12 w-12 rounded-full"
+              placeholder="/images/placeholder.svg"
             />
             <div class="ml-4">
               <div class="font-semibold">Afi Santa</div>
@@ -289,7 +291,7 @@
               </div>
             </div>
           </div>
-          <p class="text-gray-600 dark:text-gray-300">
+          <p class="text-gray-600 dark:text-gray-300" v-animate-on-scroll>
             "Being part of this community has significantly accelerated my
             professional growth. The knowledge sharing and networking
             opportunities are invaluable."
@@ -297,10 +299,11 @@
         </div>
         <div class="rounded-lg p-6 shadow-lg">
           <div class="mb-4 flex items-center">
-            <img
+            <NuxtImg
               src="https://api.dicebear.com/9.x/open-peeps/svg?seed=Aneka&clip=true&size=256&randomizeIds=false&accessories=glasses&face=smile&clothingColor=fdea6b&backgroundColor=ffcf77&head=bun"
               alt="Sarah's avatar"
               class="h-12 w-12 rounded-full"
+              placeholder="/images/placeholder.svg"
             />
             <div class="ml-4">
               <div class="font-semibold">Maurice Kan</div>
@@ -309,7 +312,7 @@
               </div>
             </div>
           </div>
-          <p class="text-gray-600 dark:text-gray-300">
+          <p class="text-gray-600 dark:text-gray-300" v-animate-on-scroll>
             "The quality of content and discussions here is exceptional. I've
             learned so much from other members and made great connections."
           </p>

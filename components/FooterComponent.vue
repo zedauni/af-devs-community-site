@@ -171,10 +171,11 @@
             </div>
             <div class="mt-12 md:mt-0">
               <div class="w-full">
-                <img
+                <NuxtImg
                   src="https://placehold.co/250x250/e84d4d/white?text=Ads&grayscale&font=playfair-display"
                   alt="Ads in footer"
                   class="inset-0"
+                  placeholder="/images/placeholder.svg"
                 />
               </div>
             </div>
