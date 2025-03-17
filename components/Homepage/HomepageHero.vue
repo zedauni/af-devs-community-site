@@ -3,11 +3,6 @@
   <section id="home">
     <div
       class="container mx-auto flex flex-col-reverse items-center px-4 md:w-9/12 md:flex-row"
-      v-animate-on-scroll="{
-        hidden: 'opacity-0 translate-y-0',
-        visible: 'opacity-100 translate-y-10',
-        transition: 'transition-all duration-1000 ease-out',
-      }"
     >
       <div class="mb-8 md:mb-0 md:w-1/2">
         <h2
@@ -16,25 +11,28 @@
         >
           {{ dynamicHeadingText }}
         </h2>
-        <p class="mb-8 leading-loose">
-          AF-DEV est la communauté de développeurs et créateurs tech africains qui façonne
-          l'avenir technologique du continent. Ensemble, construisons des
-          solutions innovantes et propulsons l'Afrique au cœur de la
-          révolution numérique.
+        <p
+          class="mb-8 leading-loose"
+        >
+          AF-DEV est la communauté de développeurs et créateurs tech africains
+          qui façonne l'avenir technologique du continent. Ensemble,
+          construisons des solutions innovantes et propulsons l'Afrique au cœur
+          de la révolution numérique.
         </p>
         <div class="text-center md:text-left">
           <AppLink
             :to="{ name: 'join' }"
-            class="btn-ripple inline-block rounded-full px-6 py-3 font-bold text-gray-100 drop-shadow-2xl transition-colors duration-300"
+            class="btn-ripple inline-block rounded-full px-6 py-3 font-bold text-gray-100 drop-shadow-2xl transition-colors duration-[var(--transition-duration-x3)]"
             >Rejoignez la révolution</AppLink
           >
         </div>
       </div>
       <div class="home-img md:w-1/2">
-        <img
-          src="~/assets/img/home.svg"
+        <NuxtImg
+          src="/images/home.svg"
           alt="Illustration AF-DEV"
           class="mx-auto w-full max-w-md"
+          preload
         />
       </div>
     </div>

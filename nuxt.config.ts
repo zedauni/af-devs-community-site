@@ -29,19 +29,26 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
         },
+        {
+          rel: "preload",
+          href: "/images/placeholder.svg",
+          as: "image",
+          type: "image/svg+xml",
+        },
       ],
     },
     // Use the environment variable to set the baseURL
-    baseURL: process.env.NUXT_APP_BASE_URL || "/",
+    baseURL: "/",
+    buildAssetsDir: "/_cold/",
   },
   runtimeConfig: {
     public: {
       // Expose the baseURL to the runtime for client-side usage
-      baseURL: process.env.NUXT_APP_BASE_URL || "/",
+      baseURL: "/",
     },
   },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/icon", "@vueuse/nuxt", '@pinia/nuxt'],
+  modules: ["@nuxt/icon", "@vueuse/nuxt", '@pinia/nuxt', "@nuxt/image"],
   icon: {
     clientBundle: {
       // list of icons to explicitly include in the client bundle

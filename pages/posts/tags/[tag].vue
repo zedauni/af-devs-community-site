@@ -63,7 +63,10 @@
       <h3 class="mt-2 text-sm font-semibold text-gray-900 dark:text-white">
         No articles found
       </h3>
-      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+      <p
+        class="mt-1 text-sm text-gray-500 dark:text-gray-400"
+        v-animate-on-scroll
+      >
         No articles found with the tag
         <span class="text-secondary">{{ tagSlug }}</span>
       </p>
@@ -75,14 +78,14 @@
         Other Tags
       </h2>
       <div class="flex flex-wrap justify-between gap-2">
-        <TagLink
+        <AppLink
           v-for="tag in otherTags"
           :key="tag.title"
-          :tag="tag"
-          class="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+          :to="{ name: 'tags-slug', params: { slug: tag.title } }"
+          class="rounded-full bg-gray-200 px-3 py-1 text-sm text-gray-800 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
         >
           {{ tag.title }}
-        </TagLink>
+        </AppLink>
       </div>
     </div>
   </main>

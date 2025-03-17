@@ -8,10 +8,11 @@
       :class="viewMode === 'list' ? 'w-48 flex-shrink-0' : ''"
     >
       <AppLink :href="article.href">
-        <img
+        <NuxtImg
           :src="article.imageUrl"
           :alt="article.title"
-          class="h-full w-full object-cover object-center transition-transform duration-300 hover:scale-105 sm:h-full sm:w-full"
+          class="h-full w-full object-cover object-center transition-transform duration-[var(--transition-duration-x3)] hover:scale-105 sm:h-full sm:w-full"
+          placeholder="/images/placeholder.svg"
         />
       </AppLink>
     </div>
@@ -22,9 +23,9 @@
           :key="tag.title"
           class="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary-700 dark:bg-primary-800 dark:text-primary-300"
         >
-          <TagLink :tag="tag">
+          <AppLink :to="{ name: 'tags-slug', params: { slug: tag.title } }">
             {{ tag.title }}
-          </TagLink>
+          </AppLink>
         </span>
       </div>
       <h3
@@ -39,19 +40,31 @@
       </p>
       <div class="mt-auto flex items-center">
         <div class="flex-shrink-0">
-          <AuthorLink :author="article.author">
-            <img
+          <AppLink
+            :to="{
+              name: 'authors-slug',
+              params: { slug: article.author.name },
+            }"
+          >
+            <NuxtImg
               class="h-8 w-8 rounded-full"
               :src="article.author.imageUrl"
               :alt="article.author.name"
+              placeholder="/images/placeholder.svg"
             />
-          </AuthorLink>
+          </AppLink>
         </div>
         <div class="ml-2 space-y-1">
           <p class="text-xs font-medium text-gray-900 dark:text-white">
-            <AuthorLink :author="article.author" class="hover:text-secondary">
+            <AppLink
+              :to="{
+                name: 'authors-slug',
+                params: { slug: article.author.name },
+              }"
+              class="hover:text-secondary"
+            >
               {{ article.author.name }}
-            </AuthorLink>
+            </AppLink>
           </p>
           <div class="flex space-x-1 text-xs text-gray-500 dark:text-gray-400">
             <time :datetime="article.datetime">{{ article.date }}</time>

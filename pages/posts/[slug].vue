@@ -3,10 +3,12 @@
     <!-- Article Header -->
     <div class="relative">
       <div class="absolute inset-0">
-        <img
-          class="h-full w-full object-cover"
+        <NuxtImg
+          class="h-full w-full object-cover text-gray-100"
           src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=3603&q=80"
+          _src="/images/placeholder.svg"
           alt="Featured image"
+          placeholder="/images/placeholder.svg"
         />
         <div
           class="absolute inset-0 bg-gray-600 mix-blend-multiply"
@@ -39,10 +41,11 @@
               <AppLink
                 :to="{ name: 'authors-slug', params: { slug: author.name } }"
               >
-                <img
-                  class="h-10 w-10 rounded-full"
+                <NuxtImg
+                  class="h-10 w-10 rounded-full text-gray-100"
                   src="https://api.dicebear.com/9.x/open-peeps/svg?seed=Aneka&clip=true&size=256&randomizeIds=false&accessories=glasses&face=smile&clothingColor=fdea6b&backgroundColor=e78276&head=bun"
                   alt="Author"
+                  placeholder="/images/placeholder.svg"
                 />
               </AppLink>
             </div>
@@ -341,7 +344,10 @@ npx tailwindcss init</code></pre>
         </div>
 
         <!-- Share Buttons -->
-        <div class="mt-8 border-t border-gray-200 pt-8 dark:border-gray-700">
+        <div
+          class="mt-8 border-t border-gray-200 pt-8 dark:border-gray-700"
+          v-animate-on-scroll
+        >
           <ShareButtons
             title="Creating Beautiful Interfaces with Tailwind CSS and Nuxt 3"
           />
@@ -360,7 +366,10 @@ npx tailwindcss init</code></pre>
             <h2 class="text-xl font-bold tracking-tight">
               Subscribe to our newsletter
             </h2>
-            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            <p
+              class="mt-2 text-sm text-gray-600 dark:text-gray-400"
+              v-animate-on-scroll
+            >
               Get the latest articles, tutorials, and updates delivered straight
               to your inbox.
             </p>
@@ -373,7 +382,7 @@ npx tailwindcss init</code></pre>
               id="email-address"
               autocomplete="email"
               required
-              class="w-full min-w-0 appearance-none rounded-md border border-gray-300 px-4 py-2 text-base placeholder-gray-500 focus:border-primary-500 focus:ring-primary-500 focus:outline-none sm:max-w-xs dark:border-gray-600 dark:placeholder-gray-400"
+              class="w-full min-w-0 appearance-none rounded-md border border-gray-400 px-4 py-2 text-base placeholder-gray-500 focus:border-primary-500 focus:ring-primary-500 focus:outline-none sm:max-w-xs dark:border-gray-600 dark:placeholder-gray-400"
               placeholder="Enter your email"
             />
             <div class="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
@@ -404,6 +413,7 @@ npx tailwindcss init</code></pre>
           </h2>
           <p
             class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4 dark:text-gray-400"
+            v-animate-on-scroll
           >
             Discover more content about development, ai, design, modern
             technologies and more.

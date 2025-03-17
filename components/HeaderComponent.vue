@@ -2,7 +2,7 @@
   <!-- Navbar -->
   <header
     id="main-header"
-    class="fixed top-0 left-0 z-50 mx-auto w-full border-b border-gray-200 bg-white/80 shadow-sm backdrop-blur-md transition-colors duration-300 dark:border-gray-50/10 dark:bg-gray-900/80"
+    class="fixed top-0 left-0 z-50 mx-auto w-full border-b border-gray-200 bg-white/80 shadow-sm backdrop-blur-md transition-colors duration-[var(--transition-duration-x3)] dark:border-gray-50/10 dark:bg-gray-900/80"
   >
     <div class="container mx-auto px-4 sm:px-6 md:w-9/12">
       <div class="flex h-16 items-center justify-between">
@@ -64,7 +64,7 @@
                 <!-- Submenu -->
                 <ul
                   v-if="item.submenu"
-                  class="ring-opacity-5 absolute left-0 z-10 mt-1 w-48 origin-top-left rounded-md bg-main-bg py-1 ring-1 shadow-lg ring-secondary-200 focus:outline-none"
+                  class="ring-opacity-5 absolute left-0 z-10 mt-1 w-48 origin-top-left rounded-md bg-back-main py-1 ring-1 shadow-lg ring-secondary-200 focus:outline-none"
                   :class="{ hidden: openedSubmenu !== item.name }"
                   role="menu"
                   aria-orientation="vertical"

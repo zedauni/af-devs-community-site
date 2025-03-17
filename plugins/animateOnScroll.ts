@@ -10,10 +10,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       const defaultClasses = {
         hidden: "opacity-0 translate-y-10",
         visible: "opacity-100 translate-y-0",
-        transition: "transition-all duration-1000 ease-out",
+        transition: "transition-transform duration-150 ease-out",
         // hidden: "opacity-0 translate-y-10",
         // visible: "opacity-100 translate-y-0",
-        // transition: "transition-all duration-1000 ease-out",
+        // transition: "transition-all duration-150 ease-out",
       };
 
       // Merge user-defined classes with defaults

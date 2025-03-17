@@ -7,7 +7,7 @@
       >
         Tags
       </h1>
-      <p class="text-lg text-gray-600 dark:text-gray-300">
+      <p class="text-lg text-gray-600 dark:text-gray-300" v-animate-on-scroll>
         Explore all topics covered in our
         <AppLink :to="{ name: 'posts' }" class="font-bold text-secondary">
           publications
@@ -20,18 +20,18 @@
       v-if="sortedTags.length > 0"
       class="tag-cloud mt-12 flex flex-wrap items-center justify-center py-6"
     >
-      <TagLink
+      <AppLink
         v-for="tag in sortedTags"
         :key="tag.title"
-        :tag="tag"
+        :to="{ name: 'tags-slug', params: { slug: tag.title } }"
         :class="[
-          'm-2 scale-105 cursor-pointer rounded-full px-3 py-1 shadow-xs shadow-gray-400/50 transition-transform duration-300 ease-in-out dark:shadow-gray-50/25',
+          'm-2 scale-105 cursor-pointer rounded-full px-3 py-1 shadow-xs shadow-gray-400/50 transition-transform duration-[var(--transition-duration)] ease-in-out dark:shadow-gray-50/25',
           getTagClass(tag.frequency),
         ]"
       >
         {{ tag.title }}
         <span class="ml-1 text-xs">({{ tag.frequency }})</span>
-      </TagLink>
+      </AppLink>
     </div>
   </main>
 </template>

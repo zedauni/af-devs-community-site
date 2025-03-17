@@ -20,8 +20,6 @@ useHeadSafe({
       "dark:bg-back-main-dark",
       "text-light",
       "dark:text-dark",
-      "transition-colors",
-      "duration-[var(--transition-duration)]",
     ],
   },
 });
