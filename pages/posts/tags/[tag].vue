@@ -82,7 +82,7 @@
           v-for="tag in otherTags"
           :key="tag.title"
           :to="{ name: 'tags-slug', params: { slug: tag.title } }"
-          class="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+          class="rounded-full bg-gray-200 px-3 py-1 text-sm text-gray-800 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
         >
           {{ tag.title }}
         </AppLink>
