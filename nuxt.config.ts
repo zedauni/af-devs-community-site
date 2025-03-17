@@ -38,12 +38,13 @@ export default defineNuxtConfig({
       ],
     },
     // Use the environment variable to set the baseURL
-    baseURL: process.env.NUXT_APP_BASE_URL || "/",
+    baseURL: "/",
+    buildAssetsDir: "/_cold/",
   },
   runtimeConfig: {
     public: {
       // Expose the baseURL to the runtime for client-side usage
-      baseURL: process.env.NUXT_APP_BASE_URL || "/",
+      baseURL: "/",
     },
   },
   css: ["~/assets/css/main.css"],
