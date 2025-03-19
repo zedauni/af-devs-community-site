@@ -8,17 +8,20 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "migrate": "pnpx prisma migrate dev",
-    "pull": "pnpx prisma db pull",
-    "generate-types": "prisma generate",
-    "seed": "pnpx prisma db seed -- --environment development"
+    "d:generate": "npx drizzle-kit generate",
+    "d:migrate": "npx drizzle-kit migrate",
+    "d:seed": "pnpm tsx ./drizzle/seed/index.ts --environment development",
+    "d:pull": "npx drizzle-kit pull"
   },
   "dependencies": {
     "@nuxt/image": "1.9.0",
     "@pinia/nuxt": "0.10.1",
-    "@prisma/client": "6.5.0",
     "@tailwindcss/vite": "^4.0.14",
     "bcryptjs": "^3.0.2",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.40.1",
+    "drizzle-seed": "^0.3.1",
+    "mysql2": "^3.13.0",
     "nuxt": "^3.15.4",
     "pinia": "^3.0.1",
     "sharp": "^0.33.5",
@@ -35,18 +38,14 @@
     "@vueuse/core": "^12.7.0",
     "@vueuse/math": "^13.0.0",
     "@vueuse/nuxt": "^12.7.0",
+    "drizzle-kit": "^0.30.5",
     "prettier": "^3.5.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "prisma": "^6.3.1",
     "tsx": "^4.19.3"
-  },
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@prisma/engines",
-      "prisma",
+      "esbuild",
       "sharp"
     ]
   },
