@@ -1,10 +1,10 @@
 <template>
   <main
-    class="duration-[var(--transition-duration)]sm:px-6 relative container mx-auto px-4 py-12 transition-colors md:w-9/12"
+    class="duration-[var(--transition-duration)]sm:px-6 relative container mx-auto px-4 pb-12 transition-colors md:w-9/12"
   >
     <!-- Hero Section -->
     <div
-      class="relative mb-16 text-center before:absolute before:inset-0 before:z-0 before:bg-[url('/images/bg-pattern-dark.svg')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-10 dark:before:bg-[url('/images/bg-pattern-light.svg')]"
+      class="relative mb-16 pt-8 text-center before:absolute before:inset-0 before:z-0 before:bg-[url('/images/bg-pattern-dark.svg')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-10 dark:before:bg-[url('/images/bg-pattern-light.svg')]"
     >
       <h1
         class="text-decoration-primary text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl"
@@ -110,7 +110,8 @@
       <div class="flex-1">
         <!-- Large Leaderboard Ad -->
         <div
-          class="mb-6 flex items-center justify-center rounded-lg border border-gray-200 bg-back-main shadow-sm dark:border-gray-800 dark:bg-gray-800" v-animate-on-scroll
+          class="mb-6 flex items-center justify-center rounded-lg border border-gray-200 bg-back-main shadow-sm dark:border-gray-800 dark:bg-gray-800"
+          v-animate-on-scroll
         >
           <!-- Placeholder image for Ads -->
           <NuxtImg

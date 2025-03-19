@@ -1,0 +1,1297 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "id": "ff1002a6-e341-4be0-9429-388a859c5eed",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "Media": {
+      "name": "Media",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "mimeType": {
+          "name": "mimeType",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "filePath": {
+          "name": "filePath",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "fileSize": {
+          "name": "fileSize",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "createdBy": {
+          "name": "createdBy",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "deletedAt": {
+          "name": "deletedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "status": {
+          "name": "status",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'default'"
+        }
+      },
+      "indexes": {
+        "Media_createdBy_idx": {
+          "name": "Media_createdBy_idx",
+          "columns": [
+            "createdBy"
+          ],
+          "isUnique": false
+        },
+        "Media_mimeType_idx": {
+          "name": "Media_mimeType_idx",
+          "columns": [
+            "mimeType"
+          ],
+          "isUnique": false
+        },
+        "Media_status_idx": {
+          "name": "Media_status_idx",
+          "columns": [
+            "status"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "Media_createdBy_User_id_fk": {
+          "name": "Media_createdBy_User_id_fk",
+          "tableFrom": "Media",
+          "tableTo": "User",
+          "columnsFrom": [
+            "createdBy"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {
+        "Media_id_pk": {
+          "name": "Media_id_pk",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "Media_name_key": {
+          "name": "Media_name_key",
+          "columns": [
+            "name"
+          ]
+        }
+      },
+      "checkConstraint": {}
+    },
+    "Post": {
+      "name": "Post",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "kind": {
+          "name": "kind",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'article'"
+        },
+        "parentId": {
+          "name": "parentId",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "createdBy": {
+          "name": "createdBy",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "deletedAt": {
+          "name": "deletedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "Post_createdBy_idx": {
+          "name": "Post_createdBy_idx",
+          "columns": [
+            "createdBy"
+          ],
+          "isUnique": false
+        },
+        "Post_parentId_idx": {
+          "name": "Post_parentId_idx",
+          "columns": [
+            "parentId"
+          ],
+          "isUnique": false
+        },
+        "Post_kind_idx": {
+          "name": "Post_kind_idx",
+          "columns": [
+            "kind"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "Post_createdBy_User_id_fk": {
+          "name": "Post_createdBy_User_id_fk",
+          "tableFrom": "Post",
+          "tableTo": "User",
+          "columnsFrom": [
+            "createdBy"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        },
+        "Post_parentId_Post_id_fk": {
+          "name": "Post_parentId_Post_id_fk",
+          "tableFrom": "Post",
+          "tableTo": "Post",
+          "columnsFrom": [
+            "parentId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {
+        "Post_id_pk": {
+          "name": "Post_id_pk",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "PostToTag": {
+      "name": "PostToTag",
+      "columns": {
+        "postId": {
+          "name": "postId",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "tagId": {
+          "name": "tagId",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        }
+      },
+      "indexes": {
+        "PostToTag_postId_idx": {
+          "name": "PostToTag_postId_idx",
+          "columns": [
+            "postId"
+          ],
+          "isUnique": false
+        },
+        "PostToTag_tagId_idx": {
+          "name": "PostToTag_tagId_idx",
+          "columns": [
+            "tagId"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "PostToTag_postId_Post_id_fk": {
+          "name": "PostToTag_postId_Post_id_fk",
+          "tableFrom": "PostToTag",
+          "tableTo": "Post",
+          "columnsFrom": [
+            "postId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        },
+        "PostToTag_tagId_Tag_id_fk": {
+          "name": "PostToTag_tagId_Tag_id_fk",
+          "tableFrom": "PostToTag",
+          "tableTo": "Tag",
+          "columnsFrom": [
+            "tagId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {
+        "PostToTag_postId_tagId_pk": {
+          "name": "PostToTag_postId_tagId_pk",
+          "columns": [
+            "postId",
+            "tagId"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "PostTranslation": {
+      "name": "PostTranslation",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "postId": {
+          "name": "postId",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "imageId": {
+          "name": "imageId",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "status": {
+          "name": "status",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'draft'"
+        },
+        "publishedAt": {
+          "name": "publishedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "surTitle": {
+          "name": "surTitle",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "subTitle": {
+          "name": "subTitle",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "postScriptum": {
+          "name": "postScriptum",
+          "type": "varchar(1024)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "slug": {
+          "name": "slug",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "excerpt": {
+          "name": "excerpt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "excerptRendered": {
+          "name": "excerptRendered",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "content": {
+          "name": "content",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "contentRendered": {
+          "name": "contentRendered",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "locale": {
+          "name": "locale",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "idealSearchTerm": {
+          "name": "idealSearchTerm",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "canonicalUrl": {
+          "name": "canonicalUrl",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "metaData": {
+          "name": "metaData",
+          "type": "json",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "createdBy": {
+          "name": "createdBy",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "updatedBy": {
+          "name": "updatedBy",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "deletedAt": {
+          "name": "deletedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "PostTranslation_createdBy_idx": {
+          "name": "PostTranslation_createdBy_idx",
+          "columns": [
+            "createdBy"
+          ],
+          "isUnique": false
+        },
+        "PostTranslation_imageId_idx": {
+          "name": "PostTranslation_imageId_idx",
+          "columns": [
+            "imageId"
+          ],
+          "isUnique": false
+        },
+        "PostTranslation_title_surTitle_subTitle_idx": {
+          "name": "PostTranslation_title_surTitle_subTitle_idx",
+          "columns": [
+            "title",
+            "surTitle",
+            "subTitle"
+          ],
+          "isUnique": false
+        },
+        "PostTranslation_locale_idx": {
+          "name": "PostTranslation_locale_idx",
+          "columns": [
+            "locale"
+          ],
+          "isUnique": false
+        },
+        "PostTranslation_postId_idx": {
+          "name": "PostTranslation_postId_idx",
+          "columns": [
+            "postId"
+          ],
+          "isUnique": false
+        },
+        "PostTranslation_status_idx": {
+          "name": "PostTranslation_status_idx",
+          "columns": [
+            "status"
+          ],
+          "isUnique": false
+        },
+        "PostTranslation_updatedBy_idx": {
+          "name": "PostTranslation_updatedBy_idx",
+          "columns": [
+            "updatedBy"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "PostTranslation_postId_Post_id_fk": {
+          "name": "PostTranslation_postId_Post_id_fk",
+          "tableFrom": "PostTranslation",
+          "tableTo": "Post",
+          "columnsFrom": [
+            "postId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        },
+        "PostTranslation_imageId_Media_id_fk": {
+          "name": "PostTranslation_imageId_Media_id_fk",
+          "tableFrom": "PostTranslation",
+          "tableTo": "Media",
+          "columnsFrom": [
+            "imageId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "cascade"
+        },
+        "PostTranslation_createdBy_User_id_fk": {
+          "name": "PostTranslation_createdBy_User_id_fk",
+          "tableFrom": "PostTranslation",
+          "tableTo": "User",
+          "columnsFrom": [
+            "createdBy"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        },
+        "PostTranslation_updatedBy_User_id_fk": {
+          "name": "PostTranslation_updatedBy_User_id_fk",
+          "tableFrom": "PostTranslation",
+          "tableTo": "User",
+          "columnsFrom": [
+            "updatedBy"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {
+        "PostTranslation_id_pk": {
+          "name": "PostTranslation_id_pk",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "PostTranslation_slug_key": {
+          "name": "PostTranslation_slug_key",
+          "columns": [
+            "slug"
+          ]
+        }
+      },
+      "checkConstraint": {}
+    },
+    "Tag": {
+      "name": "Tag",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "parentId": {
+          "name": "parentId",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "kind": {
+          "name": "kind",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'tag'"
+        },
+        "createdBy": {
+          "name": "createdBy",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "deletedAt": {
+          "name": "deletedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "Tag_createdBy_idx": {
+          "name": "Tag_createdBy_idx",
+          "columns": [
+            "createdBy"
+          ],
+          "isUnique": false
+        },
+        "Tag_parentId_idx": {
+          "name": "Tag_parentId_idx",
+          "columns": [
+            "parentId"
+          ],
+          "isUnique": false
+        },
+        "Tag_kind_idx": {
+          "name": "Tag_kind_idx",
+          "columns": [
+            "kind"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "Tag_createdBy_User_id_fk": {
+          "name": "Tag_createdBy_User_id_fk",
+          "tableFrom": "Tag",
+          "tableTo": "User",
+          "columnsFrom": [
+            "createdBy"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        },
+        "Tag_parentId_Tag_id_fk": {
+          "name": "Tag_parentId_Tag_id_fk",
+          "tableFrom": "Tag",
+          "tableTo": "Tag",
+          "columnsFrom": [
+            "parentId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {
+        "Tag_id_pk": {
+          "name": "Tag_id_pk",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "TagTranslation": {
+      "name": "TagTranslation",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "tagId": {
+          "name": "tagId",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "imageId": {
+          "name": "imageId",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "status": {
+          "name": "status",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'draft'"
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "slug": {
+          "name": "slug",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "descriptionRendered": {
+          "name": "descriptionRendered",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "locale": {
+          "name": "locale",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdBy": {
+          "name": "createdBy",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "updatedBy": {
+          "name": "updatedBy",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "deletedAt": {
+          "name": "deletedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "TagTranslation_createdBy_idx": {
+          "name": "TagTranslation_createdBy_idx",
+          "columns": [
+            "createdBy"
+          ],
+          "isUnique": false
+        },
+        "TagTranslation_imageId_idx": {
+          "name": "TagTranslation_imageId_idx",
+          "columns": [
+            "imageId"
+          ],
+          "isUnique": false
+        },
+        "TagTranslation_title_idx": {
+          "name": "TagTranslation_title_idx",
+          "columns": [
+            "title"
+          ],
+          "isUnique": false
+        },
+        "TagTranslation_locale_idx": {
+          "name": "TagTranslation_locale_idx",
+          "columns": [
+            "locale"
+          ],
+          "isUnique": false
+        },
+        "TagTranslation_status_idx": {
+          "name": "TagTranslation_status_idx",
+          "columns": [
+            "status"
+          ],
+          "isUnique": false
+        },
+        "TagTranslation_tagId_idx": {
+          "name": "TagTranslation_tagId_idx",
+          "columns": [
+            "tagId"
+          ],
+          "isUnique": false
+        },
+        "TagTranslation_updatedBy_idx": {
+          "name": "TagTranslation_updatedBy_idx",
+          "columns": [
+            "updatedBy"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "TagTranslation_tagId_Tag_id_fk": {
+          "name": "TagTranslation_tagId_Tag_id_fk",
+          "tableFrom": "TagTranslation",
+          "tableTo": "Tag",
+          "columnsFrom": [
+            "tagId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        },
+        "TagTranslation_imageId_Media_id_fk": {
+          "name": "TagTranslation_imageId_Media_id_fk",
+          "tableFrom": "TagTranslation",
+          "tableTo": "Media",
+          "columnsFrom": [
+            "imageId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "cascade"
+        },
+        "TagTranslation_createdBy_User_id_fk": {
+          "name": "TagTranslation_createdBy_User_id_fk",
+          "tableFrom": "TagTranslation",
+          "tableTo": "User",
+          "columnsFrom": [
+            "createdBy"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        },
+        "TagTranslation_updatedBy_User_id_fk": {
+          "name": "TagTranslation_updatedBy_User_id_fk",
+          "tableFrom": "TagTranslation",
+          "tableTo": "User",
+          "columnsFrom": [
+            "updatedBy"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {
+        "TagTranslation_id_pk": {
+          "name": "TagTranslation_id_pk",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "TagTranslation_slug_key": {
+          "name": "TagTranslation_slug_key",
+          "columns": [
+            "slug"
+          ]
+        }
+      },
+      "checkConstraint": {}
+    },
+    "User": {
+      "name": "User",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "lastName": {
+          "name": "lastName",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "username": {
+          "name": "username",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "password": {
+          "name": "password",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "locale": {
+          "name": "locale",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "locked": {
+          "name": "locked",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": false
+        },
+        "validated": {
+          "name": "validated",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": false
+        },
+        "lastLogin": {
+          "name": "lastLogin",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "confirmationKey": {
+          "name": "confirmationKey",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "passwordResetToken": {
+          "name": "passwordResetToken",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "passwordResetTokenExpiresAt": {
+          "name": "passwordResetTokenExpiresAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "passwordResetTokenEmailsSent": {
+          "name": "passwordResetTokenEmailsSent",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": 0
+        },
+        "privateKey": {
+          "name": "privateKey",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "apiKey": {
+          "name": "apiKey",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "avatar": {
+          "name": "avatar",
+          "type": "varchar(26)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "birthday": {
+          "name": "birthday",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "bio": {
+          "name": "bio",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "newsletter": {
+          "name": "newsletter",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": false
+        },
+        "gender": {
+          "name": "gender",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "phone": {
+          "name": "phone",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "mainUrl": {
+          "name": "mainUrl",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "externalId": {
+          "name": "externalId",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "corporation": {
+          "name": "corporation",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "note": {
+          "name": "note",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP())"
+        },
+        "deletedAt": {
+          "name": "deletedAt",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "status": {
+          "name": "status",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'default'"
+        }
+      },
+      "indexes": {
+        "User_avatar_idx": {
+          "name": "User_avatar_idx",
+          "columns": [
+            "avatar"
+          ],
+          "isUnique": false
+        },
+        "User_status_idx": {
+          "name": "User_status_idx",
+          "columns": [
+            "status"
+          ],
+          "isUnique": false
+        },
+        "User_username_idx": {
+          "name": "User_username_idx",
+          "columns": [
+            "username"
+          ],
+          "isUnique": false
+        },
+        "User_name_lastName_corporation_idx": {
+          "name": "User_name_lastName_corporation_idx",
+          "columns": [
+            "name",
+            "lastName",
+            "corporation"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "User_avatar_Media_id_fk": {
+          "name": "User_avatar_Media_id_fk",
+          "tableFrom": "User",
+          "tableTo": "Media",
+          "columnsFrom": [
+            "avatar"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {
+        "User_id_pk": {
+          "name": "User_id_pk",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "User_username_key": {
+          "name": "User_username_key",
+          "columns": [
+            "username"
+          ]
+        },
+        "User_email_key": {
+          "name": "User_email_key",
+          "columns": [
+            "email"
+          ]
+        }
+      },
+      "checkConstraint": {}
+    }
+  },
+  "views": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "tables": {},
+    "indexes": {}
+  }
+}

@@ -9,6 +9,7 @@
     "nuxt",
     "nuxtjs",
     "pinia",
+    "tagtranslation",
     "tailwindcss",
     "vueuse"
   ]
